@@ -46,7 +46,7 @@
                         </li>
                         
                         <li style="margin-top: 10px;">
-                            <b>Preferred Web Framework</b>: Svelte
+                            <b>Preferred Web Framework</b>: SvelteKit
                             <ul>
                                 <li><b>Why</b>: It's quick and absoultely awesome. I'm currently using it for my website!</li>
                                 <li><b>Reccomended</b>: If you want your website to be fast, then yeah!</li>

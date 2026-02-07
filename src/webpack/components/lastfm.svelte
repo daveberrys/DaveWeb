@@ -67,6 +67,11 @@
 		color: #ffffff;
 		margin: 20px;
 		box-shadow: 0 4px 8px var(--glowColor);
+		
+		scale: 1;
+		transition: scale 50ms ease-in-out;
+	} .lastfmWidget:hover {
+	    scale: 1.01;
 	}
 
 	.trackInfo {
