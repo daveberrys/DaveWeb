@@ -89,12 +89,6 @@
         text-decoration: none;
     }
     
-    .icon {
-        filter: invert(1);
-        width: 50px;
-        height: 50px;
-    }
-    
     .titleText {
         font-weight: bold;
         font-size: 25px;

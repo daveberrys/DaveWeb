@@ -11,14 +11,6 @@
 		"sourceMap": true,
 		"strict": true,
 		"moduleResolution": "bundler",
-		
-		"baseUrl": ".",
-    "paths": {
-      "@components/*": ["src/webpack/components/*"],
-      "@pages/*": ["src/webpack/pages/*"],
-      "@misc/*": ["src/webpack/misc/*"],
-      "@api/*": ["src/webpack/api/*"],
-    },
 	}
 	// Path aliases are handled by https://svelte.dev/docs/kit/configuration#alias
 	// except $lib which is handled by https://svelte.dev/docs/kit/configuration#files
