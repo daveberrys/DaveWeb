@@ -44,7 +44,7 @@
 			<span>
 				Here's my workflow if you <i>really</i> wanted to know.
 
-				<Item>
+				<Item marginTop="0px">
 					<ul>
 						<li>
 							<b>Code Editor</b>: Zed Editor
@@ -97,8 +97,37 @@
                     >
 				</div>
 
-				<PopupModule bind:open={showAboutMe} title="About Me">
-					<p>I'll make this later</p>
+				<PopupModule bind:open={showAboutMe} title="More Infomation About Me">
+					<p> I'm a guy who uses AI for coding. Not to blindly give me code or to write me code, but to help me learn and understand how to code by giving me quizzes. </p>
+
+					<p> I'm learning more languages! I've so far known 5 languages and I'm learning 4. Why? I don't know. I just like learning new things. </p>
+					
+					<details>
+						<summary class="bigText" style="cursor: pointer;">Languages I know</summary>
+						<ul>
+							<span class="bigText">Learnt:</span>
+							<li>Lua</li>
+							<li>Haxe</li>
+							<li>JavaScript (little bit)</li>
+							<li>TypeScript (little bit)</li>
+							<li>Bash</li>
+							<li>Python</li>
+							<li>HTML</li>
+							<li>CSS</li>
+						</ul>
+						
+						<ul>
+							<span class="bigText">Learning:</span>
+							<li>C#</li>
+							<li>Rust</li>
+							<li>GoLang</li>
+							<li>Java</li>
+						</ul>
+					</details>
+					
+					<p> I do find AI bad for the world (phyiscal), but for digital cases, I find it okay to use. Especially when it gives you quizzes. </p>
+
+					<p> I'm a soft guy! I don't get mad easily, and I respect your opinion on something. I can help you out on helping your emotions! I probably won't be good at it, but I try anyways. </p>
 				</PopupModule>
 
 				<Bar />
@@ -144,5 +173,10 @@
 	.flexButtonCenter {
         display: flex;
         justify-content: center;
+	}
+
+	.bigText {
+		font-weight: bold;
+		font-size: 20px;
 	}
 </style>

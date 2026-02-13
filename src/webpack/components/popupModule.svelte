@@ -41,10 +41,15 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
+		
 		background-color: rgba(0, 0, 0, 0.7);
+		backdrop-filter: blur(5px);
+		-webkit-backdrop-filter: blur(8px);
+
 		display: flex;
 		justify-content: center;
 		align-items: center;
+
 		z-index: 100;
 	}
 
