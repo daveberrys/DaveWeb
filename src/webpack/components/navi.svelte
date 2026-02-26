@@ -1,114 +1,46 @@
 <script lang="ts">
-	export let currentPage: string;
+	export let onAboutClick: () => void = () => {};
+	export let onLinksClick: () => void = () => {};
+	export let onContributionsClick: () => void = () => {};
+	export let onMyJourneyClick: () => void = () => {};
 </script>
 
-<div class="navibar">
-	<a href="/">
-		<div class="item" class:currentlySelected={currentPage === 'Home'}>
-			<img src="/assets/icons/navi/home.svg" alt={currentPage} class="icon" />
-			<span class="mobileOff">Home</span>
-		</div>
-	</a>
+<div class="navi">
+	<button class="frame button" type="button" on:click={onAboutClick} aria-label="Open About window">
+		<img src="assets/icons/navi/home.svg" width="25" height="25" alt="About Me" class="icon"/>
+	</button>
 
-	<a href="/contributions">
-		<div class="item" class:currentlySelected={currentPage === 'Contributions'}>
-			<img src="/assets/icons/navi/book-open.svg" alt={currentPage} class="icon" />
-			<span class="mobileOff">Contributions</span>
-		</div>
-	</a>
+	<button class="frame button" type="button" on:click={onLinksClick} aria-label="Open Links window">
+		<img src="assets/icons/navi/link.svg" width="25" height="25" alt="My Links" class="icon"/>
+	</button>
 
-	<a href="/links">
-		<div class="item" class:currentlySelected={currentPage === 'Links'}>
-			<img src="/assets/icons/navi/link.svg" alt={currentPage} class="icon" />
-			<span class="mobileOff">Links</span>
-		</div>
-	</a>
+	<button class="frame button" type="button" on:click={onContributionsClick} aria-label="Open Contributions window">
+		<img src="assets/icons/navi/book-open.svg" width="25" height="25" alt="Contributions" class="icon"/>
+	</button>
 
-	<a href="/myJourney">
-		<div class="item" class:currentlySelected={currentPage === 'My Journey'}>
-			<img src="/assets/icons/navi/arrow-right.svg" alt={currentPage} class="icon" />
-			<span class="mobileOff">My Journey</span>
-		</div>
-	</a>
+	<button class="frame button" type="button" on:click={onMyJourneyClick} aria-label="Open My Journey window">
+		<img src="assets/icons/navi/arrow-right.svg" width="25" height="25" alt="My Journey" class="icon"/>
+	</button>
 </div>
 
 <style>
-	.currentlySelected {
-		background-color: var(--secondaryColor);
-		box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
-	}
-	.currentlySelected:hover {
-		background-color: var(--secondaryColor);
-		box-shadow: 0 4px 15px var(--accentColor);
+    .icon {
+		filter: invert(1) drop-shadow(0px 5px 5px black);
 	}
 
-	.navibar {
+	.navi {
+		margin-top: 10px;
+
 		display: flex;
-		justify-content: center;
-		flex-wrap: wrap;
-
-		box-shadow: 0 4px 8px var(--glowColor);
-		background-color: var(--frameColor);
-		border-radius: 8px;
-		width: 750px;
-		padding: 10px;
 		gap: 10px;
 	}
 
-	.item {
-		background-color: rgba(0, 0, 0, 0);
-		box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
-		outline: none;
+	.button {
+		appearance: none;
 		scale: 1;
-		border-radius: 8px;
-
-		display: flex;
-		gap: 5px;
-		vertical-align: auto;
-		width: max-content;
-		padding: 5px;
-
-		transition: all 250ms ease-in-out;
-	}
-	.item:hover {
-		background-color: var(--itemColor);
-		box-shadow: 0 4px 15px var(--glowColor);
-		scale: 1.05;
-	}
-
-	.currentlySelected {
-		background-color: var(--accentColor);
-		box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
-	}
-	.currentlySelected:hover {
-		background-color: var(--secondaryColor);
-		box-shadow: 0 4px 15px var(--accentColor);
-	}
-
-	a {
-		color: var(--textColor);
-		text-decoration: none;
-	}
-
-	.icon {
-		filter: invert(1);
-	}
-
-	.mobileOff {
-		display: block;
-	}
-
-	@media screen and (max-width: 768px) {
-		.navibar {
-			width: auto;
-		}
-
-		.mobileOff {
-			display: none;
-		}
-
-		.currentlySelected .mobileOff {
-			display: block;
-		}
+		transition: scale 150ms ease-in-out;
+	} .button:hover {
+		scale: 1.1;
+		cursor: pointer;
 	}
 </style>

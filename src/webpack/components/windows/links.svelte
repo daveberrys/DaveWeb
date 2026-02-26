@@ -1,9 +1,8 @@
 <script lang="ts">
-	import Navi from '@components/navi.svelte';
-	import Frame from '@components/frame.svelte';
-	import Item from '@components/item.svelte';
+	import Window from '../window.svelte';
+    import './textStyle.css'
 
-	const links = [
+    const links = [
 	    {
 			name: "Github",
 			url: "https://github.com/daveberrys",
@@ -35,30 +34,28 @@
 			description: 'LastFM is where I keep track of my music. It\'s pretty cool!'
 		}
 	];
+
+	export let onClose: () => void = () => {};
 </script>
 
-<main>
-	<Navi currentPage="Links" />
-	
-	<Frame>
-	    {#each links as link (link.url)}
-			<a href={link.url} target="_blank" rel="noopener noreferrer" class="socialMainContainer">
-		        <Item marginTop="10px">
-					<div class="socialContainer">
-				        <div class="socialItem">
-				            <img src="assets/icons/social/{link.name}.svg" alt={link.name} class="icon"/> 
-				        </div>
-					
-				        <div class="socialItem">
-				            <span style="font-weight: bold; font-size: 25px;">{link.name}</span> <br/>
-			    	        <span>{link.description}</span>
-			            </div>
-					</div>
-		        </Item>
-			</a>
-	    {/each}
-	</Frame>
-</main>
+<Window title="Links" {onClose}>
+	{#each links as link (link.url)}
+		<a href={link.url} target="_blank" rel="noopener noreferrer" class="socialMainContainer">
+	        <div class="frame">
+				<div class="socialContainer">
+			        <div class="socialItem">
+			            <img src="assets/icons/social/{link.name}.svg" alt={link.name} class="icon"/> 
+			        </div>
+				
+			        <div class="socialItem">
+			            <span style="font-weight: bold; font-size: 25px;">{link.name}</span> <br/>
+		    	        <span>{link.description}</span>
+		            </div>
+				</div>
+	        </div>
+		</a>
+	{/each}
+</Window>
 
 <style>
     .socialContainer {
@@ -72,8 +69,12 @@
     }
     
     .icon {
-        filter: invert(1);
+        filter: invert(1) drop-shadow(0px 5px 5px black);
         width: 50px;
         height: 50px;
+    }
+
+    .frame {
+        margin-top: 10px;
     }
 </style>

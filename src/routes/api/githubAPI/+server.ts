@@ -1,5 +1,7 @@
+import { json } from '@sveltejs/kit';
+import type { RequestHandler } from './$types';
 import { env } from '$env/dynamic/private';
-import { allContributions } from '$lib/contributions.js';
+import { allContributions } from './contributions.js';
 
 const CACHE_DURATION = 10 * 60 * 1000; // 10 minutes
 let cachedStats: GithubStats | null = null;
@@ -120,9 +122,9 @@ async function fetchRepoContributors(path: string): Promise<number> {
 	return Array.isArray(data) ? data.length : 0;
 }
 
-export async function load() {
+async function buildGithubStats() {
 	if (cachedStats && Date.now() - cacheTimestamp < CACHE_DURATION) {
-		return { stats: cachedStats };
+		return cachedStats;
 	}
 
 	const stats: GithubStats = {};
@@ -163,5 +165,15 @@ export async function load() {
 	cachedStats = stats;
 	cacheTimestamp = Date.now();
 
-	return { stats };
+	return stats;
 }
+
+export const GET: RequestHandler = async () => {
+	try {
+		const stats = await buildGithubStats();
+		return json({ stats });
+	} catch (error: any) {
+		console.error('GitHub API route error:', error);
+		return json({ error: `Failed to fetch GitHub stats: ${error?.message ?? 'Unknown error'}` }, { status: 500 });
+	}
+};

@@ -34,7 +34,7 @@
 	});
 </script>
 
-<div class="lastfmWidget">
+<div class="lastfmWidget frame">
 	{#if isLoading}
 		<p>Loading Last.fm data...</p>
 	{:else if error}
@@ -45,28 +45,28 @@
 				<img src={currentTrack.albumArt} alt="Album Art" class="albumArt" />
 			{/if}
 			<div class="details">
-				<p class="song">{currentTrack.song}</p>
-				<p class="artist">{currentTrack.artist}</p>
+				<span class="song">{currentTrack.song}</span> <br/>
+				<span class="artist">{currentTrack.artist}</span> <br/>
 				{#if currentTrack.isPlaying}
-					<p class="status playing">Currently Playing</p>
+					<span class="status playing">Currently Playing</span> <br/>
 				{:else}
-					<p class="status">Last Played</p>
+					<span class="status">Last Played</span> <br/>
 				{/if}
 			</div>
 		</div>
 	{:else}
-		<p>No Last.fm data available.</p>
+		<span>No Last.fm data available.</span>
 	{/if}
 </div>
 
 <style>
 	.lastfmWidget {
-		background-color: var(--frameColor);
 		border-radius: 8px;
 		padding: 15px;
 		color: #ffffff;
-		margin: 20px;
-		box-shadow: 0 4px 8px var(--glowColor);
+		margin: 20px auto;
+		align-self: center;
+		box-sizing: border-box;
 		
 		scale: 1;
 		transition: scale 50ms ease-in-out;
@@ -85,7 +85,13 @@
 		height: 60px;
 		border-radius: 4px;
 		object-fit: cover;
+
+        box-shadow: 0px 5px 5px black;
 	}
+
+    .song, .artist, .status {
+        text-shadow: 0px 0px 5px black;
+    }
 
 	.details {
 		flex-grow: 1;
