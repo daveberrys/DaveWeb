@@ -22,10 +22,10 @@ export const softwareAndWebsiteContributions: Contribution[] = [
         type: 'organization'
     },
     {
-        name: 'Universe Engine',
-        url: 'https://github.com/Team-UniverseEngine',
+        name: 'Solar Engine',
+        url: 'https://github.com/Team-SolarEngine',
         description:
-            'Modified version of Psych Engine, now turning into a base-game fork. Former main developer.',
+            'Modified version of Psych Engine, now turning into a base-game fork. Former main developer. Formerly called as Universe Engine.',
         tags: 'open source',
         type: 'organization'
     }
