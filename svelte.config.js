@@ -1,30 +1,13 @@
 import adapter from '@sveltejs/adapter-cloudflare';
-import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	preprocess: vitePreprocess(),
-
-	onwarn: (warning, handler) => {
-		if (warning.code === 'css-unused-selector') {
-			return;
-		}
-		handler(warning);
+	compilerOptions: {
+		// Force runes mode for the project, except for libraries. Can be removed in svelte 6.
+		runes: ({ filename }) => (filename.split(/[/\\]/).includes('node_modules') ? undefined : true)
 	},
-
 	kit: {
-	  adapter: adapter({
-      platformProxy: {
-        persist: true
-      }
-    }),
-
-		alias: {
-			'@components': './src/webpack/components',
-			'@pages': './src/webpack/pages',
-			'@misc': './src/webpack/misc',
-			'@api': './src/webpack/api'
-		}
+		adapter: adapter()
 	}
 };
 

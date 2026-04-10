@@ -1,13 +1,3 @@
-I LOVE SVELTE <br>
-I LOVE SVELTE <br>
-I LOVE SVELTE <br>
-I LOVE SVELTE <br>
-I LOVE SVELTE <br>
+hi
 
-Anyways, Uses SvelteKit. <br>
-https://codedave.pages.dev
-
-Website is somewhat vibe-coded. <br>
-Mainly because I'm really stupid and I forget things easily.
-
-MIT License
+the website has been though 7 reworks now yay yay yippee
