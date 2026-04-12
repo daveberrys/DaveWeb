@@ -14,12 +14,10 @@
     "generate-types": "wrangler types"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^13.1.8",
     "@astrojs/svelte": "^8.0.4",
     "astro": "^6.1.5",
     "svelte": "^5.55.3",
-    "typescript": "^5.9.3",
-    "wrangler": "^4.81.1"
+    "typescript": "^5.9.3"
   },
   "overrides": {
     "vite": "^7"
