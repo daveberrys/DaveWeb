@@ -27,7 +27,7 @@
 
     async function loadLastFM() {
         try {
-            const response = await fetch(`https://${import.meta.env.SERVER}/api/lastfm`);
+            const response = await fetch(`https://${import.meta.env.PUBLIC_SERVER}/api/lastfm`);
             const data = await response.json();
 
             if (!response.ok || !data) {
