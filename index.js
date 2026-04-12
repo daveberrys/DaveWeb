@@ -1,8 +1,11 @@
 import 'dotenv/config';
 import express from 'express';
+import cors from 'cors';
 import serverless from 'serverless-http';
 const app = express();
 const port = 3000
+
+app.use(cors());
 
 import * as discord from './api/discord.js';
 import * as githubAPI from './api/githubAPI.js';
