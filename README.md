@@ -1,3 +1,4 @@
-hi
+# howdy 'der
+I would say like, don't do PR's because I 90% won't accept it.
 
-the website has been though 7 reworks now yay yay yippee
+also this is the 8th recode so stfu
