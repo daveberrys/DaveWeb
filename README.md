@@ -1,4 +1,3 @@
-# howdy 'der
-I would say like, don't do PR's because I 90% won't accept it.
+"smh javascript better" -a developer out there
 
-also this is the 8th recode so stfu
+code mainly fixed by `gemini 3 flash preview` because I canNOT be bothered to fix my own stupid fucking code

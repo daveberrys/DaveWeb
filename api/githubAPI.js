@@ -1,18 +1,9 @@
-import { allContributions } from "../../data/contributionsData.js";
+import { allContributions } from "./misc/contributionsData.js";
 
 const cacheDuration = 10 * 60 * 1000;
 
 let cachedStats = null;
 let cacheTimestamp = 0;
-
-function createJSONResponse(data, status = 200) {
-  return new Response(JSON.stringify(data), {
-    status: status,
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-}
 
 function extractGithubPath(url) {
   return url
@@ -31,10 +22,10 @@ function getContributionType(path) {
 }
 
 function getGithubToken() {
-  if (import.meta.env.GITHUB_API) {
-    return import.meta.env.GITHUB_API;
-  } else if (import.meta.env.GITHUB_TOKEN) {
-    return import.meta.env.GITHUB_TOKEN;
+  if (process.env.GITHUB_API) {
+    return process.env.GITHUB_API;
+  } else if (process.env.GITHUB_TOKEN) {
+    return process.env.GITHUB_TOKEN;
   } else {
     return null;
   }
@@ -199,30 +190,26 @@ async function buildGithubStats() {
   return stats;
 }
 
-export async function GET({ request }) {
+export async function GET(req) {
   try {
-    const requestURL = new URL(request.url);
-    const githubPath = requestURL.searchParams.get("url");
+    const githubPath = req.query.url;
 
     if (githubPath) {
       const stat = await buildSingleGithubStat(githubPath);
 
-      return createJSONResponse(stat);
+      return stat;
     }
 
     const stats = await buildGithubStats();
 
-    return createJSONResponse({
+    return {
       stats: stats,
-    });
+    };
   } catch (error) {
     console.log("Exception: " + error);
 
-    return createJSONResponse(
-      {
-        error: "Failed to fetch GitHub stats.",
-      },
-      500,
-    );
+    return {
+      error: "Failed to fetch GitHub stats.",
+    };
   }
 }
