@@ -47,7 +47,7 @@
         }
 
         try {
-            const response = await fetch(`/api/githubapi?url=${encodeURIComponent(url)}`);
+            const response = await fetch(`https://${import.meta.env.SERVER}/api/githubapi?url=${encodeURIComponent(url)}`);
             const data = await response.json();
 
             if (!response.ok || !data || data.type === "error") {
