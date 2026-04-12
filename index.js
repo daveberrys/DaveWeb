@@ -1,5 +1,6 @@
 import 'dotenv/config';
 import express from 'express';
+import serverless from 'serverless-http';
 const app = express();
 const port = 3000
 
@@ -29,6 +30,10 @@ app.get('/api/lastfm', (req, res) => {
     .catch(err => res.status(500).json({ error: err.message }));
 })
 
-app.listen(port, () => {
-  console.log(`Dave's API server running at ${port}`);
-})
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(port, () => {
+    console.log(`Dave's API server running locally at http://localhost:${port}`);
+  });
+}
+
+export const handler = serverless(app);
