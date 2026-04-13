@@ -27,7 +27,7 @@
 
     async function loadLastFM() {
         try {
-            const response = await fetch(`https://${import.meta.env.PUBLIC_SERVER}/api/lastfm`);
+            const response = await fetch(`${import.meta.env.PUBLIC_SERVER}/api/lastfm`);
             const data = await response.json();
 
             if (!response.ok || !data) {
@@ -82,29 +82,29 @@
 		display: flex;
 		align-items: center;
 		gap: 14px;
-		
+
     	.albumArt {
     		display: block;
     		object-fit: cover;
     		background: #111;
     	}
-    
+
     	.textSection {
     		display: flex;
     		flex-direction: column;
     		gap: 4px;
-      
+
             .songText {
                 font-weight: bold;
                 font-size: 1.5em;
             }
-      
+
            	.statusText,
            	.songText,
            	.artistText {
           		margin: 0;
            	}
-            
+
            	.statusText {
           		font-size: 0.75em;
                 font-style: italic;

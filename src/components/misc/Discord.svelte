@@ -22,7 +22,7 @@
 
     async function fetchDiscordData() {
         try {
-            const response = await fetch(`https://${import.meta.env.PUBLIC_SERVER}/api/discord`);
+            const response = await fetch(`${import.meta.env.PUBLIC_SERVER}/api/discord`);
             const data = await response.json();
 
             if (!response.ok || !data) {
