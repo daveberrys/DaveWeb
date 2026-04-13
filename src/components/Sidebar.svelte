@@ -59,7 +59,7 @@
     </div>
     
     <div class="mobileHint">
-        <span>ppst: scroll right to fill your screen to the main panel!</span>
+        <span>ppst: drag to left to fill your screen to the main panel!</span>
     </div>
 </div>
 
