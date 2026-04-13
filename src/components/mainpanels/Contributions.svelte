@@ -12,6 +12,14 @@
         new Github("PinpointTools", "A team dedicated for making open source software and websites."),
         new Github("Creativity-Archived", "A way to easily share your game with less restrctions. No bullshit. Just cool shit."),
         new Github("Team-SolarEngine", "Modified version of Psych Engine, now turning into a base-game fork. Former main developer. Formerly called as Universe Engine."),
+        new Github("Team-SolarEngine", "Modified version of Psych Engine, now turning into a base-game fork. Former main developer. Formerly called as Universe Engine."),
+        new Github("Team-SolarEngine", "Modified version of Psych Engine, now turning into a base-game fork. Former main developer. Formerly called as Universe Engine."),
+        new Github("Team-SolarEngine", "Modified version of Psych Engine, now turning into a base-game fork. Former main developer. Formerly called as Universe Engine."),
+        new Github("Team-SolarEngine", "Modified version of Psych Engine, now turning into a base-game fork. Former main developer. Formerly called as Universe Engine."),
+        new Github("Team-SolarEngine", "Modified version of Psych Engine, now turning into a base-game fork. Former main developer. Formerly called as Universe Engine."),
+        new Github("Team-SolarEngine", "Modified version of Psych Engine, now turning into a base-game fork. Former main developer. Formerly called as Universe Engine."),
+        new Github("Team-SolarEngine", "Modified version of Psych Engine, now turning into a base-game fork. Former main developer. Formerly called as Universe Engine."),
+        new Github("Team-SolarEngine", "Modified version of Psych Engine, now turning into a base-game fork. Former main developer. Formerly called as Universe Engine."),
     ]
     
     function makeRows(linkList) {
@@ -45,18 +53,18 @@
         <span>Take a look at the stuff I contributed.</span>
     </section>
     
-    <section class="contributions">
-        {#each linkRows as row}
-            <section class="content">
-                {#each row as link}
+    {#each linkRows as row}
+        <section class="contributions">
+            {#each row as link}
+                <div class="content">
                     <GithubCard
                         url={link.url}
                         desc={link.desc}
                     />
-                {/each}
-            </section>
-        {/each}
-    </section>
+                </div>
+            {/each}
+        </section>
+    {/each}
 </main>
 
 <style>
@@ -75,10 +83,10 @@
     
         .contributions {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             gap: 1rem;
-            width: 100%;
-            flex-wrap: wrap;
+            max-width: 100%;
             
             .content {
                 display: flex;

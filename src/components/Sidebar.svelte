@@ -1,6 +1,7 @@
 <script>
     import Time from "./misc/Time.svelte";
     export let currentPath = "/";
+    export let mobileMode = false;
 
     // SIDEBAR NAVIGATION CODE
     class SidebarLink {
@@ -56,6 +57,10 @@
             <a class:active={checkActiveLink(link.href)} href={link.href}>{link.label}</a>
         {/each}
     </div>
+    
+    <div class="mobileHint">
+        <span>ppst: scroll right to fill your screen to the main panel!</span>
+    </div>
 </div>
 
 <style>
@@ -72,7 +77,7 @@
 
         border-right: 2px solid var(--border);
         background-color: var(--sidebar);
-
+        
         .top {
             margin-top: 2rem;
             display: flex;
@@ -114,6 +119,16 @@
                 scale: 1.05;
             } a.active {
                 background-color: var(--primary);
+            }
+        }
+        
+        .mobileHint {
+            display: none;
+            margin-top: 20rem;
+            color: var(--text);
+        } @media screen and (max-width: 768px) {
+            .mobileHint {
+                display: block;
             }
         }
     }

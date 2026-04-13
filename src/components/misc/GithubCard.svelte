@@ -112,7 +112,6 @@
             word-break: break-word;
         } .descText {
             color: var(--text);
-            opacity: 0.85;
         }
     
         .stats {
