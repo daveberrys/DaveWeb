@@ -2,7 +2,6 @@
     import { onMount } from "svelte";
 
     let discordData = null;
-
     const statusLabels = {
         online: 'Online',
         idle: 'Idle',
@@ -20,6 +19,11 @@
         };
     }
 
+    function truncateString(str) {
+      const maxLength = 25;
+      return str.length > maxLength ? str.slice(0, maxLength) + '...' : str;
+    }
+    
     async function fetchDiscordData() {
         try {
             const response = await fetch(`${import.meta.env.PUBLIC_SERVER}/api/discord`);
@@ -60,7 +64,7 @@
             <span class="big">{discordData.displayName}</span> <br/>
             <!-- <span class="small">{discordData.username}</span> <br/> -->
             {#if discordData.state}
-                <span>{discordData.state}</span> <br/>
+                <span>{truncateString(discordData.state)}</span> <br/>
             {/if}
             <span class={`small ${discordData.status}`}>{statusLabels[discordData.status] || discordData.status}</span>
         </section>

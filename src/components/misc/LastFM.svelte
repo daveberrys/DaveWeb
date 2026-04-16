@@ -8,6 +8,11 @@
     let artist = null;
     let status = null;
 
+    function truncateString(str) {
+      const maxLength = 25;
+      return str.length > maxLength ? str.slice(0, maxLength) + '...' : str;
+    }
+    
     function getStatusClass() {
         if (status === 'Currently playing') {
             return 'playing';
@@ -68,8 +73,8 @@
 		<img class="albumArt" src={albumArt} alt="Album art" width="64" height="64" />
 
 		<div class="textSection">
-			<p class="songText">{song}</p>
-			<p class="artistText">{artist}</p>
+			<p class="songText">{truncateString(song)}</p>
+			<p class="artistText">{truncateString(artist)}</p>
 			<p class={`statusText ${getStatusClass()}`}>{status}</p>
 		</div>
 	{:else}

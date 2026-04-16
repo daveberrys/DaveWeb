@@ -24,9 +24,15 @@
             
             <span>
                 I've learnt about 8 programming languages <br/>
-                <img src="https://skillicons.dev/icons?i=python,html,css,js,ts,lua,haxe,bash&amp;theme=dark" alt="python, html, css, js, ts, lua, haxe, bash"> <br/>
+                <img
+                    src="https://skillicons.dev/icons?i=python,html,css,js,ts,lua,haxe,bash&amp;theme=dark"
+                    alt="python, html, css, js, ts, lua, haxe, bash"
+                /> <br/>
                 and 4 different web frameworks. <br/>
-                <img src="https://skillicons.dev/icons?i=svelte,solidjs,astro,react&amp;theme=dark" alt="svelte, solidjs, astro, react">
+                <img
+                    src="https://skillicons.dev/icons?i=svelte,solidjs,astro,react&amp;theme=dark"
+                    alt="svelte, solidjs, astro, react"
+                />
             </span>
         </section>
     </section>
