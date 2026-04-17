@@ -1,0 +1,10 @@
+---
+import Layout from '../Layout.astro';
+import MainPanel from '../components/mainpanels/Blogs.svelte'
+
+let currentPath = Astro.url.pathname;
+---
+
+<Layout path={currentPath}>
+    <MainPanel client:load />
+</Layout>

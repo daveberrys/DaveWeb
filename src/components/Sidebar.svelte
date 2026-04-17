@@ -14,7 +14,8 @@
     let links = [
         new SidebarLink("Home", "/"),
         new SidebarLink("Contributions", "/contributions"),
-        new SidebarLink("Links", "/links")
+        new SidebarLink("Links", "/links"),
+        new SidebarLink("Blogs", "/blogs")
     ];
 
     function formatPath(path) {
