@@ -10,7 +10,7 @@ app.use(cors());
 import * as discord from './api/discord.js';
 import * as githubAPI from './api/githubAPI.js';
 import * as lastfm from './api/lastfm.js';
-import * as blogs from './api/blogs.js';
+import * as news from './api/news.js';
 
 app.get('/', (req, res) => {
   res.redirect("https://codedave.pages.dev");
@@ -35,23 +35,23 @@ app.get('/api/lastfm', (req, res) => {
 })
 
 // Blogs API
-app.get('/api/blogs/fetchall', async (req, res) => {
+app.get('/api/news/fetchall', async (req, res) => {
   try {
-    const blogList = await blogs.fetchAll();
-    res.json(blogList);
+    const newsList = await news.fetchAll();
+    res.json(newsList);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
 })
 
-app.get('/api/blogs/fetch', async (req, res) => {
-  const blogName = req.query.blog;
-  if (!blogName) {
-    res.status(400).json({ error: 'blog parameter is required' });
+app.get('/api/news/fetch', async (req, res) => {
+  const newsName = req.query.news;
+  if (!newsName) {
+    res.status(400).json({ error: 'news parameter is required' });
     return;
   }
   try {
-    const content = await blogs.fetch(blogName);
+    const content = await news.fetch(newsName);
     res.type('text/markdown').send(content);
   } catch (err) {
     res.status(404).json({ error: err.message });
