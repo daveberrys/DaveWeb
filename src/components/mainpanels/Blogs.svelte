@@ -2,20 +2,20 @@
     import { onMount } from "svelte";
     import { marked } from "marked";
 
-    class BlogAPI {
+    class NewsAPI {
         constructor(serverBaseUrl) {
             this.serverBaseUrl = serverBaseUrl;
         }
 
         getFetchAllUrl() {
-            return `${this.serverBaseUrl}/api/blogs/fetchall`;
+            return `${this.serverBaseUrl}/api/news/fetchall`;
         }
 
-        getFetchBlogUrl(blogName) {
-            return `${this.serverBaseUrl}/api/blogs/fetch?blog=${encodeURIComponent(blogName)}`;
+        getFetchNewsUrl(newsName) {
+            return `${this.serverBaseUrl}/api/news/fetch?news=${encodeURIComponent(newsName)}`;
         }
 
-        async fetchAllBlogs() {
+        async fetchAllNewss() {
             try {
                 const response = await fetch(this.getFetchAllUrl());
                 const data = await response.json();
@@ -31,9 +31,9 @@
             }
         }
 
-        async fetchBlogMarkdown(blogName) {
+        async fetchNewsMarkdown(newsName) {
             try {
-                const response = await fetch(this.getFetchBlogUrl(blogName));
+                const response = await fetch(this.getFetchNewsUrl(newsName));
 
                 if (!response.ok) {
                     return null;
@@ -48,20 +48,20 @@
         }
     }
 
-    let blogList = [];
-    let selectedBlogName = null;
+    let newsList = [];
+    let selectedNewsName = null;
 
-    let blogHtml = "Select a blog from the list to view its content.";
-    let isLoadingBlogList = false;
-    let isLoadingBlog = false;
+    let newsHtml = "Select a news from the list to view its content.";
+    let isLoadingNewsList = false;
+    let isLoadingNews = false;
     let statusMessage = null;
 
-    function getBlogPriorityNumber(blogName) {
-        if (!blogName) {
+    function getNewsPriorityNumber(newsName) {
+        if (!newsName) {
             return null;
         }
 
-        const match = blogName.trim().match(/^(\d+)\./);
+        const match = newsName.trim().match(/^(\d+)\./);
 
         if (!match) {
             return null;
@@ -70,22 +70,22 @@
         }
     }
 
-    function sortBlogListHighPriorityFirst(blogs) {
-        if (!blogs || !Array.isArray(blogs)) {
+    function sortNewsListHighPriorityFirst(news) {
+        if (!news || !Array.isArray(news)) {
             return [];
         }
 
-        const blogsWithSortInfo = blogs.map(function (blogName, index) {
-            const priorityNumber = getBlogPriorityNumber(blogName);
+        const newsWithSortInfo = news.map(function (newsName, index) {
+            const priorityNumber = getNewsPriorityNumber(newsName);
 
             return {
-                blogName,
+                newsName,
                 index,
                 priorityNumber
             };
         });
 
-        blogsWithSortInfo.sort(function (a, b) {
+        newsWithSortInfo.sort(function (a, b) {
             const aHasPriority = a.priorityNumber !== null && Number.isFinite(a.priorityNumber) === true;
             const bHasPriority = b.priorityNumber !== null && Number.isFinite(b.priorityNumber) === true;
 
@@ -104,8 +104,8 @@
             }
         });
 
-        return blogsWithSortInfo.map(function (item) {
-            return item.blogName;
+        return newsWithSortInfo.map(function (item) {
+            return item.newsName;
         });
     }
 
@@ -123,96 +123,96 @@
         }
     }
 
-    function setFallbackBlogList() {
-        blogList = [];
+    function setFallbackNewsList() {
+        newsList = [];
     }
 
-    function setFallbackBlogContent() {
-        blogHtml = "Could not load this blog.";
+    function setFallbackNewsContent() {
+        newsHtml = "Could not load this news.";
     }
 
     function setLoadingContent() {
-        blogHtml = "Loading blog...";
+        newsHtml = "Loading news...";
     }
 
-    async function refreshBlogList() {
-        isLoadingBlogList = true;
-        statusMessage = "Loading blogs...";
+    async function refreshNewsList() {
+        isLoadingNewsList = true;
+        statusMessage = "Loading news...";
 
         const serverBaseUrl = getServerBaseUrl();
 
         if (!serverBaseUrl) {
-            setFallbackBlogList();
+            setFallbackNewsList();
             statusMessage = "PUBLIC_SERVER is not set. Please set it in your .env file.";
-            isLoadingBlogList = false;
+            isLoadingNewsList = false;
             return;
         }
 
-        const api = new BlogAPI(serverBaseUrl);
-        const blogs = await api.fetchAllBlogs();
+        const api = new NewsAPI(serverBaseUrl);
+        const news = await api.fetchAllNewss();
 
-        if (!blogs || !Array.isArray(blogs)) {
-            setFallbackBlogList();
-            statusMessage = "No blogs could be loaded right now.";
+        if (!news || !Array.isArray(news)) {
+            setFallbackNewsList();
+            statusMessage = "No news could be loaded right now.";
         } else {
-            blogList = sortBlogListHighPriorityFirst(blogs);
+            newsList = sortNewsListHighPriorityFirst(news);
             statusMessage = null;
 
-            if (blogList.length === 0) {
-                statusMessage = "No blogs were found in the backend blogs folder.";
+            if (newsList.length === 0) {
+                statusMessage = "No news were found in the backend news folder.";
             }
         }
 
-        isLoadingBlogList = false;
+        isLoadingNewsList = false;
     }
 
-    async function loadBlog(blogName) {
-        selectedBlogName = blogName;
-        isLoadingBlog = true;
+    async function loadNews(newsName) {
+        selectedNewsName = newsName;
+        isLoadingNews = true;
         statusMessage = null;
         setLoadingContent();
 
         const serverBaseUrl = getServerBaseUrl();
 
         if (!serverBaseUrl) {
-            setFallbackBlogContent();
+            setFallbackNewsContent();
             statusMessage = "PUBLIC_SERVER is not set. Please set it in your .env file.";
-            isLoadingBlog = false;
+            isLoadingNews = false;
             return;
         }
 
-        const api = new BlogAPI(serverBaseUrl);
-        const markdown = await api.fetchBlogMarkdown(blogName);
+        const api = new NewsAPI(serverBaseUrl);
+        const markdown = await api.fetchNewsMarkdown(newsName);
 
         if (!markdown) {
-            setFallbackBlogContent();
-            statusMessage = "Could not fetch blog content.";
-            isLoadingBlog = false;
+            setFallbackNewsContent();
+            statusMessage = "Could not fetch news content.";
+            isLoadingNews = false;
             return;
         } else {
             try {
-                blogHtml = marked.parse(markdown);
+                newsHtml = marked.parse(markdown);
             } catch (error) {
                 console.log("Exception: " + error);
                 statusMessage = "Could not render markdown.";
-                setFallbackBlogContent();
+                setFallbackNewsContent();
             }
         }
 
-        isLoadingBlog = false;
+        isLoadingNews = false;
     }
 
     onMount(function () {
-        refreshBlogList();
+        refreshNewsList();
     });
 </script>
 
-<main class="blogsPanel">
+<main class="newsPanel">
     <aside class="sidebar">
         <section class="sidebarHeader">
-            <span class="titleText">Blogs</span>
-            <button class="refreshButton" on:click={refreshBlogList} disabled={isLoadingBlogList === true}>
-                {#if isLoadingBlogList === true}
+            <span class="titleText">News</span>
+            <button class="refreshButton" on:click={refreshNewsList} disabled={isLoadingNewsList === true}>
+                {#if isLoadingNewsList === true}
                     Loading...
                 {:else}
                     Refresh
@@ -224,29 +224,29 @@
             <p class="statusText">{statusMessage}</p>
         {/if}
 
-        <section class="blogList">
-            {#each blogList as blogName}
+        <section class="newsList">
+            {#each newsList as newsName}
                 <button
-                    class:selected={selectedBlogName === blogName}
-                    class="blogButton"
+                    class:selected={selectedNewsName === newsName}
+                    class="newsButton"
                     on:click={function () {
-                        loadBlog(blogName);
+                        loadNews(newsName);
                     }}
-                    disabled={isLoadingBlog === true && selectedBlogName === blogName}
+                    disabled={isLoadingNews === true && selectedNewsName === newsName}
                 >
-                    {blogName}
+                    {newsName}
                 </button>
             {/each}
         </section>
     </aside>
 
     <section class="content">
-        {@html blogHtml}
+        {@html newsHtml}
     </section>
 </main>
 
 <style>
-    .blogsPanel {
+    .newsPanel {
         display: flex;
         height: 100%;
         width: 100%;
@@ -294,7 +294,7 @@
                 opacity: 0.85;
             }
 
-            .blogList {
+            .newsList {
                 list-style: none;
                 padding: 0;
                 margin: 0;
@@ -302,7 +302,7 @@
                 flex-direction: column;
                 gap: 6px;
 
-                .blogButton {
+                .newsButton {
                     all: unset;
                     cursor: pointer;
                     color: var(--text);
@@ -310,7 +310,7 @@
                     padding: 4px 0;
                 }
 
-                .blogButton.selected {
+                .newsButton.selected {
                     color: var(--primary);
                     font-weight: bold;
                 }
@@ -332,7 +332,7 @@
     }
 
     @media (max-width: 800px) {
-        .blogsPanel {
+        .newsPanel {
             flex-direction: column;
 
             .sidebar {

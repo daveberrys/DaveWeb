@@ -15,7 +15,7 @@
         new SidebarLink("Home", "/"),
         new SidebarLink("Contributions", "/contributions"),
         new SidebarLink("Links", "/links"),
-        new SidebarLink("Blogs", "/blogs")
+        new SidebarLink("News", "/news")
     ];
 
     function formatPath(path) {
