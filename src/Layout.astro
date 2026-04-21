@@ -1,10 +1,11 @@
 ---
 import Sidebar from "./components/Sidebar.svelte"
+import { ClientRouter } from "astro:transitions";
 
 const { path = "/" } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="en" transition:animate="none">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=0.85" />
@@ -20,11 +21,13 @@ const { path = "/" } = Astro.props;
 </head>
     <body>
         <div class="parent">
-            <Sidebar client:load currentPath={path} />
-            <section class="mainPanel"><slot/></section>
+            <Sidebar transition:persist client:load currentPath={path} />
+            <section transition:animate="slide" class="mainPanel"><slot/></section>
         </div>
     </body>
 </html>
+
+<ClientRouter />
 
 <style>
 
