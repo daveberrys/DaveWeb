@@ -1,5 +1,5 @@
 <script>
-    import GithubCard from '../misc/GithubCard.svelte';
+    import GithubCard from '../misc/Contributions/GithubCard.svelte';
     
     class Github {
         constructor(url, desc) {

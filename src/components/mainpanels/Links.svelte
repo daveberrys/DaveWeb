@@ -17,6 +17,10 @@
       new Link("Tiktok", "https://www.tiktok.com/@itsdaveberrys", "I post whatever I want. You'll see me post random things because I have no idea."),
     ];
     
+    function removeHTTPs(url) {
+        return url.replace("https://", '');
+    }
+    
     function makeRows(linkList) {
         let rows = [];
         let currentIndex = 0;
@@ -55,6 +59,7 @@
                     <div class="linkContent">
                         <span class="socialText">{link.title}</span>
                         <span>{link.desc}</span>
+                        <span class="linkURL">{removeHTTPs(link.url)}</span>
                     </div>
                 </a>
             {/each}
@@ -106,6 +111,11 @@
                         font-size: 1.5rem;
                         color: var(--primary);
                         font-weight: bold;
+                    }
+                    
+                    .linkURL {
+                        font-size: 0.7rem;
+                        color: var(--misc);
                     }
                 }
             } .link:hover {

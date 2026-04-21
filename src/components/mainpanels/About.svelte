@@ -1,6 +1,6 @@
 <script>
-    import Discord from '../misc/Discord.svelte';
-    import LastFM from '../misc/LastFM.svelte';
+    import Discord from '../misc/About/Discord.svelte';
+    import LastFM from '../misc/About/LastFM.svelte';
 </script>
 
 <main>
@@ -18,20 +18,20 @@
             <span>
                 I am a self-taught teenager open source software developer. I make websites, software, and tools! <br/>
                 I'm also an artist! I create designs, make furry cartoony arts and practicing! <br/>
-                I really don't like to call myself smart, as I do use AI to help me out with some of my projects. <br/>
-                Nontheless, I am productive with AI helping me on the side! I don't use AI to create everything for me.
+                
             </span>
             
             <span>
-                I've learnt about 8 programming languages <br/>
+                <span class="bigText">💻 Skills/Tech Stack</span> <br/>
                 <img
                     src="https://skillicons.dev/icons?i=python,html,css,js,ts,lua,haxe,bash&amp;theme=dark"
                     alt="python, html, css, js, ts, lua, haxe, bash"
+                    style="width: 25rem"
                 /> <br/>
-                and 4 different web frameworks. <br/>
                 <img
-                    src="https://skillicons.dev/icons?i=svelte,solidjs,astro,react&amp;theme=dark"
-                    alt="svelte, solidjs, astro, react"
+                    src="https://skillicons.dev/icons?i=svelte,solidjs,astro,react,express&amp;theme=dark"
+                    alt="svelte, solidjs, astro, react, express"
+                    style="width: 20rem"
                 />
             </span>
         </section>
@@ -39,14 +39,16 @@
     
     <section class="stats">
         <span class="bigText">📈 Stats</span> <br/>
-        <img
-            src="https://raw.githubusercontent.com/daveberrys/daves-stats/refs/heads/main/profile/stats.svg"
-            alt="Daveberry's GitHub Stats"
-        />
-        <img
-            src="https://raw.githubusercontent.com/daveberrys/daves-stats/refs/heads/main/profile/toplangs.svg"
-            alt="Daveberry's Top 6 Languages"
-        />
+        <section>
+            <img
+                src="https://raw.githubusercontent.com/daveberrys/daves-stats/refs/heads/main/profile/stats.svg"
+                alt="Daveberry's GitHub Stats"
+            />
+            <img
+                src="https://raw.githubusercontent.com/daveberrys/daves-stats/refs/heads/main/profile/toplangs.svg"
+                alt="Daveberry's Top 6 Languages"
+            />
+        </section>
     </section>
 </main>
 
@@ -54,7 +56,6 @@
     main {
         display: flex;
         flex-direction: column;
-        align-items: center;
         gap: 30px;
         
         .showoff {
@@ -66,19 +67,27 @@
         }
         
         .about {
-            text-align: center;
             section {
                 display: flex;
                 flex-direction: column;
                 gap: 14px;
             }
         }
+        
+        .stats {
+            section {
+                @media screen and (max-width: 768px) {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 14px;
+                }
+                /*overflow-x: scroll;*/
+            }
+        }
     }
     
     .bigText {
         display: flex;
-        justify-content: center;
-        
         font-size: 2rem;
         font-weight: bold;
     }

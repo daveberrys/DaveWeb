@@ -34,7 +34,6 @@
             return [
                 `${githubData.stars} stars`,
                 `${githubData.forks} forks`,
-                `${githubData.issues} issues`,
                 `${githubData.contributors} contributors`
             ];
         }
@@ -57,6 +56,8 @@
                 githubData = data;
                 errorMessage = null;
             }
+            
+            console.log(githubData);
         } catch (error) {
             console.log("Exception: " + error);
             errorMessage = "Could not fetch GitHub data.";
