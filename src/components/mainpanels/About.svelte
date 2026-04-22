@@ -1,6 +1,7 @@
 <script>
     import Discord from '../misc/About/Discord.svelte';
     import LastFM from '../misc/About/LastFM.svelte';
+    import WakatimeStats from '../misc/About/WakatimeStats.svelte';
 </script>
 
 <main>
@@ -40,14 +41,7 @@
     <section class="stats">
         <span class="bigText">📈 Stats</span> <br/>
         <section>
-            <img
-                src="https://raw.githubusercontent.com/daveberrys/daves-stats/refs/heads/main/profile/stats.svg"
-                alt="Daveberry's GitHub Stats"
-            />
-            <img
-                src="https://raw.githubusercontent.com/daveberrys/daves-stats/refs/heads/main/profile/toplangs.svg"
-                alt="Daveberry's Top 6 Languages"
-            />
+            <WakatimeStats/>
         </section>
     </section>
 </main>

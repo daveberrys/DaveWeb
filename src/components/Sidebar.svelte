@@ -51,6 +51,10 @@
             <span>Local Time: <Time /></span>
         </div>
         <span>I'm Daveberry! I'm a teenage self-taught software engineer and also an artist. Check out my contributions!</span>
+        <img
+            src="https://wakatime.com/badge/user/9f7dc743-5120-4844-b311-4d8d62751dcc.svg"
+            alt="wakatimeSpent"
+        />
     </div>
 
     <div class="bottom">
