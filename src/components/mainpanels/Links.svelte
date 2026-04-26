@@ -18,8 +18,12 @@
     ];
     
     function removeHTTPs(url) {
+    if (url.startsWith("https://www.")) {
+        return url.replace("https://www.", '');
+    } else if (url.startsWith("https://")) {
         return url.replace("https://", '');
     }
+}
     
     function makeRows(linkList) {
         let rows = [];
