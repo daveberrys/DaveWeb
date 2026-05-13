@@ -12,6 +12,7 @@
         new Github("PinpointTools", "A team dedicated for making open source software and websites."),
         new Github("Creativity-Archived", "A way to easily share your game with less restrctions. No bullshit. Just cool shit."),
         new Github("Team-SolarEngine", "Modified version of Psych Engine, now turning into a base-game fork. Former main developer. Formerly called as Universe Engine."),
+        new Github("daveberrys/LitV", "A inspired 'uv' tooling for Python. Your next helper for your python project. Made in Rust."),
     ]
     
     function makeRows(linkList) {

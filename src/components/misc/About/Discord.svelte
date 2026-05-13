@@ -55,7 +55,7 @@
 
 <main>
     {#if discordData}
-        <section>
+        <section class="avatar">
             {#if discordData.avatarUrl}
                 <img src={discordData.avatarUrl} alt="Discord avatar" width="64" height="64" />
             {/if}
@@ -80,7 +80,17 @@
         display: flex;
         align-items: center;
 		gap: 14px;
-        
+		background-color: var(--sidebar);
+		border: 2px solid var(--border);
+		padding: 5px 10px;
+		border-radius: 10px;
+
+		section.avatar {
+			img {
+			    border-radius: 10px;
+			}
+		}
+		
         .big {
             font-weight: bold;
             font-size: 1.5em;

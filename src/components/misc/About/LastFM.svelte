@@ -87,11 +87,16 @@
 		display: flex;
 		align-items: center;
 		gap: 14px;
+		background-color: var(--sidebar);
+		border: 2px solid var(--border);
+		padding: 5px 10px;
+		border-radius: 10px;
 
     	.albumArt {
     		display: block;
     		object-fit: cover;
     		background: #111;
+            border-radius: 10px;
     	}
 
     	.textSection {
