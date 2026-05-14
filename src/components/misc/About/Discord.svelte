@@ -99,16 +99,16 @@
         .small {
             font-size: 0.75em;
             font-style: italic;
+
+            &.online {
+                color: #0F0;
+            } &.idle {
+                color: #FF0;
+            } &.dnd {
+                color: #F00;
+            } &.offline {
+                color: #888;
+            }
         }
-    }
-    
-    .small.online {
-        color: #0F0;
-    } .small.idle {
-        color: #FF0;
-    } .small.dnd {
-        color: #F00;
-    } .small.offline {
-        color: #888;
     }
 </style>

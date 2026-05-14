@@ -107,7 +107,6 @@
             .songText {
                 font-weight: bold;
                 font-size: 1.5em;
-                width: 15rem;
             }
 
            	.statusText,
