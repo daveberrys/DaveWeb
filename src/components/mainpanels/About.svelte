@@ -8,8 +8,8 @@
             { name: "Lua", icon: "lua", state: "yellow" },
             { name: "Haxe", icon: "haxe", state: "yellow" },
             { name: "Python", icon: "python", state: "blue" },
-            { name: "HTML", icon: "html", state: "blue" },
-            { name: "CSS", icon: "css", state: "blue" },
+            { name: "HTML", icon: "html", state: "yellow" },
+            { name: "CSS", icon: "css", state: "yellow" },
             { name: "Rust", icon: "rust", state: "red" },
             { name: "Go", icon: "go", state: "red" },
             { name: "JavaScript", icon: "js", state: "blue" },
@@ -72,8 +72,8 @@
             <span class="skills">
                 <span class="bigText">💻 Skills/Tech Stack</span>
                 <span class="smallText">Tap/Hover Information:</span>
-                <span style="color: #008BFF;"><b>Blue</b> - Prefers this language, and codes in it</span> <br>
-                <span style="color: #FFFF00;"><b>Yellow</b> - Codes this languages, but doesn't mainly code in it.</span> <br>
+                <span style="color: #008BFF;"><b>Blue</b> - Prefers this language, and codes in it.</span> <br>
+                <span style="color: #FFFF00;"><b>Yellow</b> - Codes in this language, but doesn't mainly code in it.</span> <br>
                 <span style="color: #FF0000;"><b>Red</b> - Learning on this language.</span>
                 
                 <section class="skillContainer">
