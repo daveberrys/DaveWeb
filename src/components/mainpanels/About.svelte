@@ -15,6 +15,7 @@
             { name: "JavaScript", icon: "js", state: "blue" },
             { name: "TypeScript", icon: "ts", state: "yellow" },
             { name: "Bash", icon: "bash", state: "yellow" },
+            { name: "Java", icon: "java", state: "red" }
         ]},
 
         { group: "📦 Frontend Frameworks", skills: [
