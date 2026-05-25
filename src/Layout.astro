@@ -3,6 +3,7 @@ import Sidebar from "./components/Sidebar.svelte"
 import { ClientRouter } from "astro:transitions";
 
 const { path = "/" } = Astro.props;
+const description = "Website contains Daveberry's portfolio and projects. Check it out! Or don't. Up to you.";
 ---
 
 <html lang="en" transition:animate="none">
@@ -18,6 +19,13 @@ const { path = "/" } = Astro.props;
         crossorigin
     />
     <title>Dave's Webby</title>
+    <meta name="description" content={description} />
+    
+    <meta content="Dave's Webby" property="og:title" />
+    <meta content={description} property="og:description" />
+    <meta content="https://codedave.pages.dev/" property="og:url" />
+    <meta content="https://codedave.pages.dev/assets/images/Daveberry%20Wave.png" property="og:image" />
+    <meta content="#008BFF" data-react-helmet="true" name="theme-color" />
 </head>
     <body>
         <div class="parent">
