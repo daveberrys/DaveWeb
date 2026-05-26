@@ -1,26 +1,15 @@
 {
-  "name": "dave-textify-web",
-  "type": "module",
-  "version": "0.0.1",
-  "engines": {
-    "node": ">=22.12.0"
-  },
+  "name": "davestextweb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "start": "node ./dist/server/entry.mjs",
-    "preview": "astro preview",
-    "astro": "astro",
-    "generate-types": "wrangler types"
+    "dev:frontend": "pnpm -C frontend dev",
+    "dev:backend": "pnpm -C backend dev",
+    "dev": "pnpm -r dev"
   },
-  "dependencies": {
-    "@astrojs/svelte": "^8.0.4",
-    "astro": "^6.1.5",
-    "marked": "^4.3.0",
-    "svelte": "^5.55.3",
-    "typescript": "^5.9.3"
-  },
-  "overrides": {
-    "vite": "^7"
-  }
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module"
 }
