@@ -2,6 +2,34 @@
     import { onMount } from "svelte";
 
     const url = "https://wakatime.com/share/@Daveberry/05adfbd0-c7d1-4460-9124-9cc326d50862.json"
+    const ignoredLanguages = [
+      "Markdown",
+      "HTML",
+      "CSS",
+      "JSON",
+      "YAML",
+      "Other",
+      "Text",
+      "TOML",
+      "git ignore",
+      "RPMSpec",
+      "XML",
+      "Git Config",
+      "jsonc",
+      "go mod",
+      "Desktop file",
+      "Image (svg)",
+      "TSConfig",
+      "CSV",
+      "INI",
+      "conf",
+      "Java Properties",
+      "TableGen",
+      "Apache Config",
+      "CMake",
+      "systemd",
+      "Checksums"
+    ]
     
     let loading = true;
     let error = false;
@@ -13,11 +41,11 @@
         const request = await fetch(url)
         const result = await request.json()
         
-        const topLanguages = result.data.slice(0, 6).map(lang => ({
+        const topLanguages = result.data.map(lang => ({
           name: lang.name,
           text: lang.text,
           color: lang.color
-        }))
+        })).filter(lang => !ignoredLanguages.includes(lang.name))
         
         wakatimeData = topLanguages;
       } catch(err) {
@@ -35,7 +63,8 @@
 </script>
 
 <main>
-    <span class="bigText">Top 6 Languages</span>
+    <span class="bigText">Top Languages</span>
+    <span style="color: rgba(255, 255, 255, 0.5)">A few of the languages are excluded from this list.</span>
     <section>
         {#if loading}
             <span>Loading...</span>
@@ -43,7 +72,7 @@
             <span style="color: red;">Error: {errMSG}</span>
         {:else if wakatimeData}
             {#each wakatimeData as wdGASTER}
-                <span style="color: {wdGASTER.color}">
+                <span class="badge" style="color: {wdGASTER.color}; --hoverColor: {wdGASTER.color}">
                     {wdGASTER.name} ••• {wdGASTER.text}
                 </span>
             {/each}
@@ -59,17 +88,24 @@
         width: 100%;
         
         section {
-            display: grid; 
-            grid-template-columns: repeat(2, 1fr); 
-            column-gap: 0rem;
-            row-gap: 0.5rem;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 10px;
             width: fit-content;
-            overflow-x: scroll;
+
+            .badge {
+                background-color: var(--sidebar);
+                border: 2px solid var(--border);
+                padding: 5px 10px;
+                border-radius: 10px;
+                transition: all 0.1s ease-in-out;
+
+                &:hover {
+                    scale: 1.05;
+                    border-color: var(--hoverColor);
+                }
+            }
         }
-    }
-    
-    .bigText {
-        font-size: 1.5rem;
-        font-weight: bold;
     }
 </style>

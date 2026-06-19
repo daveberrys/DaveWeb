@@ -127,9 +127,4 @@
             }
         }
     }
-    
-    .bigText {
-        font-size: 2rem;
-        font-weight: bold;
-    }
 </style>

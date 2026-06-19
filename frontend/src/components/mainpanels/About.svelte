@@ -72,7 +72,7 @@
             
             <span class="skills">
                 <span class="bigText">💻 Skills/Tech Stack</span>
-                <span class="smallText">Tap/Hover Information:</span>
+                <span class="mediumText">Tap/Hover Information:</span>
                 <span style="color: #008BFF;"><b>Blue</b> - Prefers this language, and codes in it.</span> <br>
                 <span style="color: #FFFF00;"><b>Yellow</b> - Codes in this language, but doesn't mainly code in it.</span> <br>
                 <span style="color: #FF0000;"><b>Red</b> - Learning on this language.</span>
@@ -182,14 +182,5 @@
                 /*overflow-x: scroll;*/
             }
         }
-    }
-    
-    .bigText {
-        display: flex;
-        font-size: 2rem;
-        font-weight: bold;
-    } .smallText {
-        display: flex;
-        font-size: 1.25rem;
     }
 </style>
