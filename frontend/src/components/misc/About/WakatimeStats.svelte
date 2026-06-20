@@ -35,6 +35,7 @@
     let error = false;
     let errMSG = null;
     let wakatimeData = null;
+    let increment = 0;
     
     async function main() {
       try {
@@ -44,7 +45,8 @@
         const topLanguages = result.data.map(lang => ({
           name: lang.name,
           text: lang.text,
-          color: lang.color
+          color: lang.color,
+          percentage: Math.round(lang.percent),
         })).filter(lang => !ignoredLanguages.includes(lang.name))
         
         wakatimeData = topLanguages;
@@ -65,6 +67,14 @@
 <main>
     <span class="bigText">Top Languages</span>
     <span style="color: rgba(255, 255, 255, 0.5)">A few of the languages are excluded from this list.</span>
+    <section class="percentageRow">
+        {#each wakatimeData as lang}
+            {#if lang.percentage > 0}
+                <div class="percentage" style="background-color: {lang.color}; width: {lang.percentage}%;"></div>
+            {/if}
+        {/each}
+    </section>
+    
     <section>
         {#if loading}
             <span>Loading...</span>
@@ -104,6 +114,24 @@
                 &:hover {
                     scale: 1.05;
                     border-color: var(--hoverColor);
+                }
+            }
+        }
+        
+        .percentageRow {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            gap: 0;
+            margin-bottom: 5px;
+            
+            .percentage {
+                height: 10px;
+
+                &:first-child {
+                    border-radius: 5px 0 0 5px;
+                } &:last-child {
+                    border-radius: 0 5px 5px 0;
                 }
             }
         }
