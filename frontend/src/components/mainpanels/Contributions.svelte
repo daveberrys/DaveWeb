@@ -1,31 +1,31 @@
 <script>
     import GitCard from '../misc/Contributions/GitCard.svelte';
     
-    class Github { constructor(url, desc, plat) { this.url = url; this.desc = desc; this.plat = "github"; } }
+    class Github { constructor(url, desc) { this.url = url; this.desc = desc; this.plat = "github"; } }
     class Codeberg { constructor(url, desc) { this.url = url; this.desc = desc; this.plat = "codeberg"; } }
     
     const githubOrganization = [
-        new Github("PinpointTools", "A team dedicated for making open source software and websites.", "github"),
-        new Github("Creativity-Archived", "A way to easily share your game with less restrctions. No bullshit. Just cool shit.", "github"),
-        new Github("Team-SolarEngine", "Modified version of Psych Engine, now turning into a base-game fork. Former main developer. Formerly called as Universe Engine.", "github"),
+        new Github("PinpointTools", "A team dedicated for making open source software and websites."),
+        new Github("Creativity-Archived", "A way to easily share your game with less restrctions. No bullshit. Just cool shit."),
+        new Github("Team-SolarEngine", "Modified version of Psych Engine, now turning into a base-game fork. Former main developer. Formerly called as Universe Engine."),
     ]
 
     const githubProjects = [
-        new Github("Noteted/Noteted", "A note taking app made with customtkinter. This project has been dropped due to having issues with the customtkinter library.", "github"),
-        new Github("Creativity-Archived/Creativity-Archived", "A place to share games, software, and many other creative content that you desire.", "github"),
-        new Github("PinpointTools/VLC.UTILS", "Share your current playing in VLC to LastFM to scrobble, and show off to your friends using Discord RPC.", "github"),
-        new Github("PinpointTools/SendYourFiles-RW", "A way to share your files to different providers.", "github"),
-        new Github("PinpointTools/WhatsAnApp", "An alternative to the official WhatsApp desktop client with custom features. Supported for cross platform. Currently under heavy break.", "github"),
-        new Github("daveberrys/LitV", "A `uv` inspired tool made with Rust. A python helper if you will.", "github"),
-        new Github("daveberrys/HostRN", "A simple and fast way to host your services without docker.", "github"),
-        new Github("daveberrys/GitUI", "A minimal alternative to GitHub Desktop. Not a full on replacement. Maybe later...", "github"),
-        new Github("daveberrys/Protux", "A terminal inspired by `cmux` but for cross-desktop.", "github"),
-        new Github("daveberrys/ThisCordRPC", "A simple Discord RPC client with presets, and many others to come.", "github"),
-        new Github("daveberrys/EWgent", "A tool to write a prompt before you send it to your preferred LLM.", "github"),
-        new Github("daveberrys/Guh", "Too cool to use GitHub Desktop but stupid to not know how to use Git CLI? This is for you.", "github"),
-        new Codeberg("dvs/dvs-interactive-cli-rs", "A simple interactive CLI made in Rust", "codeberg"),
-        new Codeberg("dvs/MakeMeYourDotFiles", "create and share your dotfiles without needing the other person to download a extra package", "codeberg"),
-        new Codeberg("dvs/ShowMyNiriRPC", "shows your niri workspace, what monitor is focused on, and what window you're currently focused on.", "codeberg"),
+        new Github("Noteted/Noteted", "A note taking app made with customtkinter. This project has been dropped due to having issues with the customtkinter library."),
+        new Github("Creativity-Archived/Creativity-Archived", "A place to share games, software, and many other creative content that you desire."),
+        new Github("PinpointTools/VLC.UTILS", "Share your current playing in VLC to LastFM to scrobble, and show off to your friends using Discord RPC."),
+        new Github("PinpointTools/SendYourFiles-RW", "A way to share your files to different providers."),
+        new Github("PinpointTools/WhatsAnApp", "An alternative to the official WhatsApp desktop client with custom features. Supported for cross platform. Currently under heavy break."),
+        new Github("daveberrys/LitV", "A `uv` inspired tool made with Rust. A python helper if you will."),
+        new Github("daveberrys/HostRN", "A simple and fast way to host your services without docker."),
+        new Github("daveberrys/GitUI", "A minimal alternative to GitHub Desktop. Not a full on replacement. Maybe later..."),
+        new Github("daveberrys/Protux", "A terminal inspired by `cmux` but for cross-desktop."),
+        new Github("daveberrys/ThisCordRPC", "A simple Discord RPC client with presets, and many others to come."),
+        new Github("daveberrys/EWgent", "A tool to write a prompt before you send it to your preferred LLM."),
+        new Github("daveberrys/Guh", "Too cool to use GitHub Desktop but stupid to not know how to use Git CLI? This is for you."),
+        new Codeberg("dvs/dvs-interactive-cli-rs", "A simple interactive CLI made in Rust"),
+        new Codeberg("dvs/MakeMeYourDotFiles", "create and share your dotfiles without needing the other person to download a extra package"),
+        new Codeberg("dvs/ShowMyNiriRPC", "shows your niri workspace, what monitor is focused on, and what window you're currently focused on."),
     ]
     
     function makeRows(linkList) {
