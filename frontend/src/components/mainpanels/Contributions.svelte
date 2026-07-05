@@ -23,9 +23,9 @@
         new Github("daveberrys/ThisCordRPC", "A simple Discord RPC client with presets, and many others to come."),
         new Github("daveberrys/EWgent", "A tool to write a prompt before you send it to your preferred LLM."),
         new Github("daveberrys/Guh", "Too cool to use GitHub Desktop but stupid to not know how to use Git CLI? This is for you."),
-        new Codeberg("dvs/dvs-interactive-cli-rs", "A simple interactive CLI made in Rust"),
-        new Codeberg("dvs/MakeMeYourDotFiles", "create and share your dotfiles without needing the other person to download a extra package"),
-        new Codeberg("dvs/ShowMyNiriRPC", "shows your niri workspace, what monitor is focused on, and what window you're currently focused on."),
+        new Codeberg("dvs/dvs-interactive-cli-rs", "A simple interactive CLI made in Rust."),
+        new Codeberg("dvs/MakeMeYourDotFiles", "Create and share your dotfiles without needing the other person to download a extra package."),
+        new Codeberg("dvs/ShowMyNiriRPC", "Shows your niri workspace, what monitor is focused on, and what window you're currently focused on."),
     ]
     
     function makeRows(linkList) {

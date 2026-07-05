@@ -14,11 +14,8 @@ async function fetchStats(url, isRepo) {
   if (!response.ok) throw new Error(`Codeberg API Error: ${response.status}`)
   const data = await response.json();
   
-  const extraData = await fetch(`${finalCodebergURL}/${isRepo ? `contributors` : `members`}`, { headers: buildHeader(), });
-  
   if (isRepo) {
     return {
-      contributors: extraData.ok ? (await extraData.json()).length : 0,
       stars: data.stars_count,
       forks: data.forks_count,
       type: "repository",
@@ -27,7 +24,6 @@ async function fetchStats(url, isRepo) {
     const reposResp = await fetch(`${finalCodebergURL}/repos`, { headers: buildHeader(), });
     
     return {
-      members: extraData.ok ? (await extraData.json()).length : 0,
       followers: data.followers_count || 0,
       repos: reposResp.ok ? (await reposResp.json()).length : 0,
       type: "organization",
