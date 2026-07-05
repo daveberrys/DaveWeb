@@ -3,15 +3,29 @@
 
     export let url = "";
     export let desc = "";
+    export let plat = "github";
 
-    let githubData = null;
+    let gitData = null;
     let errorMessage = null;
 
-    function getGithubLink() {
-        return `https://github.com/${url}`;
+    const platformInfo = {
+        github: {
+            baseUrl: "https://github.com",
+            apiEndpoint: "github",
+            label: "GitHub",
+        },
+        codeberg: {
+            baseUrl: "https://codeberg.org",
+            apiEndpoint: "codeberg",
+            label: "Codeberg",
+        },
+    };
+
+    function getLink() {
+        return `${platformInfo[plat].baseUrl}/${url}`;
     }
 
-    function getGithubType() {
+    function getType() {
         if (url.includes("/")) {
             return "Repository";
         } else {
@@ -20,62 +34,60 @@
     }
 
     function getStats() {
-        if (!githubData) {
+        if (!gitData) {
             return [];
         }
 
-        if (githubData.type === "organization") {
+        if (gitData.type === "organization") {
             return [
-                `${githubData.followers} followers`,
-                `${githubData.repos} repos`,
-                `${githubData.members} members`
+                `${gitData.followers} followers`,
+                `${gitData.repos} repos`,
+                `${gitData.members} members`
             ];
         } else {
             return [
-                `${githubData.stars} stars`,
-                `${githubData.forks} forks`,
-                `${githubData.contributors} contributors`
+                `${gitData.stars} stars`,
+                `${gitData.forks} forks`,
+                `${gitData.contributors} contributors`
             ];
         }
     }
 
-    async function loadGithubData() {
+    async function loadGitData() {
         if (!url) {
-            errorMessage = "GitHub URL not set.";
+            errorMessage = `${platformInfo[plat].label} URL not set.`;
             return;
         }
 
         try {
-            const response = await fetch(`${import.meta.env.PUBLIC_SERVER}/api/github?url=${encodeURIComponent(url)}`);
+            const response = await fetch(`${import.meta.env.PUBLIC_SERVER}/api/${platformInfo[plat].apiEndpoint}?url=${encodeURIComponent(url)}`);
             const data = await response.json();
 
             if (!response.ok || !data || data.type === "error") {
-                errorMessage = "Could not fetch GitHub data.";
-                githubData = null;
+                errorMessage = `Could not fetch ${platformInfo[plat].label} data.`;
+                gitData = null;
             } else {
-                githubData = data;
+                gitData = data;
                 errorMessage = null;
             }
-            
-            console.log(githubData);
         } catch (error) {
             console.log("Exception: " + error);
-            errorMessage = "Could not fetch GitHub data.";
-            githubData = null;
+            errorMessage = `Could not fetch ${platformInfo[plat].label} data.`;
+            gitData = null;
         }
     }
 
     onMount(function () {
-        loadGithubData();
+        loadGitData();
     });
 </script>
 
-<a class="githubCard" href={getGithubLink()} target="_blank" rel="noreferrer">
-    <span class="typeText">{getGithubType()}</span>
+<a class="gitCard" href={getLink()} target="_blank" rel="noreferrer">
+    <span class="typeText">{getType()} ({platformInfo[plat].label})</span>
     <span class="titleText">{url}</span>
     <span class="descText">{desc}</span>
 
-    {#if githubData}
+    {#if gitData}
         <div class="stats">
             {#each getStats() as stat}
                 <span class="stat">{stat}</span>
@@ -84,12 +96,12 @@
     {:else if errorMessage}
         <span class="errorText">{errorMessage}</span>
     {:else}
-        <span class="loadingText">Loading GitHub...</span>
+        <span class="loadingText">Loading {platformInfo[plat].label}...</span>
     {/if}
 </a>
 
 <style>
-    .githubCard {
+    .gitCard {
         display: flex;
         flex-direction: column;
         gap: 8px;
@@ -136,7 +148,7 @@
         }
     }
 
-    .githubCard:hover {
+    .gitCard:hover {
         border-color: var(--primary);
     }
 </style>

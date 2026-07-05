@@ -11,6 +11,7 @@ app.use((req, res, next) => {
   next()
 })
 
+import * as codebergAPI from './api/codebergAPI.js';
 import * as discord from './api/discord.js';
 import * as githubAPI from './api/githubAPI.js';
 import * as lastfm from './api/lastfm.js';
@@ -28,6 +29,12 @@ app.get('/api/discord', (req, res) => {
 
 app.get('/api/github', (req, res) => {
   githubAPI.GET(req)
+    .then(data => res.json(data))
+    .catch(err => res.status(500).json({ error: err.message }));
+})
+
+app.get('/api/codeberg', (req, res) => {
+  codebergAPI.GET(req)
     .then(data => res.json(data))
     .catch(err => res.status(500).json({ error: err.message }));
 })

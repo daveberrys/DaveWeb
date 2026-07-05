@@ -8,6 +8,7 @@
     }
     
     const links = [
+      new Link("Codeberg", "https://codeberg.org/dvs", "This is also the platform I share my code! Don't ask why I have two. New projects goes here."),
       new Link("Github", "https://github.com/daveberrys", "This is where I share all my code! Like this website! It's open source under MIT License."),  
       new Link("Discord", "https://discord.gg/S5jTpsq8Js", "This is my discord server! I'm very active in discord since all my friends are here. Discord is \"daveberrys\""),
       new Link("Twitter", "https://twitter.com/thedevdoggo", "Most of my active posts are right here! I'm actually somewhat active (lol)"),

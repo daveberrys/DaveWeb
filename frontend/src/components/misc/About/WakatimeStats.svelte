@@ -46,7 +46,7 @@
           name: lang.name,
           text: lang.text,
           color: lang.color,
-          percentage: Math.round(lang.percent),
+          percentage: lang.percent,
         })).filter(lang => !ignoredLanguages.includes(lang.name))
         
         wakatimeData = topLanguages;
@@ -69,9 +69,7 @@
     <span style="color: rgba(255, 255, 255, 0.5)">A few of the languages are excluded from this list.</span>
     <section class="percentageRow">
         {#each wakatimeData as lang}
-            {#if lang.percentage > 0}
-                <div class="percentage" style="background-color: {lang.color}; width: {lang.percentage}%;"></div>
-            {/if}
+            <div class="percentage" style="background-color: {lang.color}; width: {lang.percentage + 0.25}%;"></div>
         {/each}
     </section>
     
