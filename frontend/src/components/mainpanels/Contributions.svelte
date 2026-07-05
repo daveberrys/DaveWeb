@@ -60,7 +60,7 @@
         <span>Take a look at the stuff I contributed.</span>
     </section>
 
-    <span class="bigText" style="margin-top: 30px;">Projects</span>
+    <span class="bigText" style="margin-top: 30px;">Organizations</span>
     {#each organization as row}
         <section class="contributions">
             {#each row as link}
