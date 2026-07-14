@@ -65,7 +65,7 @@ html, body {
 
 .parent {
     display: flex;
-    height: 100vh;
+    height: 100dvh;
     background: var(--background);
     color: var(--text);
     font-family: jetbrains;
@@ -75,7 +75,7 @@ html, body {
     .mainPanel {
         flex: 1;
         min-width: 0;
-        max-height: 100vh;
+        @media (max-width: 768px) { max-height: 100dvh; }
         padding: 50px;
         box-sizing: border-box;
         overflow-y: scroll;

@@ -26,6 +26,7 @@
         new Codeberg("dvs/dvs-interactive-cli-rs", "A simple interactive CLI made in Rust."),
         new Codeberg("dvs/MakeMeYourDotFiles", "Create and share your dotfiles without needing the other person to download a extra package."),
         new Codeberg("dvs/ShowMyNiriRPC", "Shows your niri workspace, what monitor is focused on, and what window you're currently focused on."),
+        new Codeberg("dvs/LLM-AutoDocs", "A tool to automatically generate documentation for your LLM models."),
     ]
     
     function makeRows(linkList) {
