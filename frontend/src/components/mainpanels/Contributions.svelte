@@ -3,6 +3,7 @@
     
     class Github { constructor(url, desc) { this.url = url; this.desc = desc; this.plat = "github"; } }
     class Codeberg { constructor(url, desc) { this.url = url; this.desc = desc; this.plat = "codeberg"; } }
+    class NotOS { constructor(url, desc) { this.url = url; this.desc = desc; this.plat = "notos"; } }
     
     const githubOrganization = [
         new Github("PinpointTools", "A team dedicated for making open source software and websites."),
@@ -27,6 +28,8 @@
         new Codeberg("dvs/MakeMeYourDotFiles", "Create and share your dotfiles without needing the other person to download a extra package."),
         new Codeberg("dvs/ShowMyNiriRPC", "Shows your niri workspace, what monitor is focused on, and what window you're currently focused on."),
         new Codeberg("dvs/LLM-AutoDocs", "A tool to automatically generate documentation for your LLM models."),
+        new Codeberg("dvs/Whispy", "Tired of typing? This is your new best friend."),
+        new NotOS("on-party.org", "Party is a static-page hosting website offering a free web hosting service. Still work in progress."),
     ]
     
     function makeRows(linkList) {

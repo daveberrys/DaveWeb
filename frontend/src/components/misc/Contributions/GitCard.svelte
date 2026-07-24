@@ -19,13 +19,21 @@
             apiEndpoint: "codeberg",
             label: "Codeberg",
         },
+        notos: {
+            baseUrl: "",
+            apiEndpoint: "",
+            label: "Not Open Source",
+        }
     };
 
     function getLink() {
-        return `${platformInfo[plat].baseUrl}/${url}`;
+        const base = platformInfo[plat].baseUrl;
+        if (!base) return url.startsWith("http") ? url : `https://${url}`;
+        return `${base}/${url}`;
     }
 
     function getType() {
+        if (plat === "notos") return "Project";
         if (url.includes("/")) {
             return "Repository";
         } else {
@@ -52,6 +60,10 @@
     async function loadGitData() {
         if (!url) {
             errorMessage = `${platformInfo[plat].label} URL not set.`;
+            return;
+        }
+
+        if (!platformInfo[plat].apiEndpoint) {
             return;
         }
 
@@ -85,14 +97,20 @@
 
     {#if gitData}
         <div class="stats">
-            {#each getStats() as stat}
-                <span class="stat">{stat}</span>
-            {/each}
+            {#if platformInfo[plat].apiEndpoint}
+                {#each getStats() as stat}
+                    <span class="stat">{stat}</span>
+                {/each}
+            {/if}
         </div>
     {:else if errorMessage}
         <span class="errorText">{errorMessage}</span>
     {:else}
-        <span class="loadingText">Loading {platformInfo[plat].label}...</span>
+        {#if plat === "notos"}
+            <span class="loadingText" style="color: var(--primary);">{getLink()}</span>
+        {:else}
+            <span class="loadingText">Loading {platformInfo[plat].label}...</span>
+        {/if}
     {/if}
 </a>
 
