@@ -57,7 +57,7 @@
     let statusMessage = null;
 
     function getNewsPriorityNumber(newsName) {
-        if (!newsName) {
+        if (!newsName || typeof newsName !== 'string') {
             return null;
         }
 
@@ -155,7 +155,10 @@
             setFallbackNewsList();
             statusMessage = "No news could be loaded right now.";
         } else {
-            newsList = sortNewsListHighPriorityFirst(news);
+            const newsNames = news.map(function (item) {
+                return item.file.replace(/\.md$/, '');
+            });
+            newsList = sortNewsListHighPriorityFirst(newsNames);
             statusMessage = null;
 
             if (newsList.length === 0) {
