@@ -90,7 +90,7 @@
                                     <img
                                         src={isExternalIcon(skill.icon)}
                                         alt={skill.name}
-                                        style="width: 3rem"
+                                        style="width: 3rem; border-radius: 10px;"
                                     />
                                     
                                     <span class="name">
