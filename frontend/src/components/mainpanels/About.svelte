@@ -10,25 +10,29 @@
             { name: "Python", icon: "python", state: "blue" },
             { name: "HTML", icon: "html", state: "yellow" },
             { name: "CSS", icon: "css", state: "yellow" },
-            { name: "Rust", icon: "rust", state: "red" },
-            { name: "Go", icon: "go", state: "red" },
-            { name: "JavaScript", icon: "js", state: "blue" },
-            { name: "TypeScript", icon: "ts", state: "yellow" },
+            { name: "Rust", icon: "rust", state: "blue" },
+            { name: "Go", icon: "go", state: "blue" },
+            { name: "JavaScript", icon: "js", state: "yellow" },
+            { name: "TypeScript", icon: "ts", state: "blue" },
             { name: "Bash", icon: "bash", state: "yellow" },
             { name: "Java", icon: "java", state: "red" }
         ]},
 
-        { group: "📦 Frontend Frameworks", skills: [
+        { group: "📦 Frontend Frameworks & UI Components", skills: [
             { name: "Svelte", icon: "svelte", state: "blue" },
             { name: "SolidJS", icon: "solidjs", state: "yellow" },
             { name: "Astro", icon: "astro", state: "blue" },
             { name: "React", icon: "react", state: "yellow" },
+            { name: "Vue", icon: "vue", state: "yellow"},
+            { name: "BeerCSS", icon: "https://www.beercss.com/favicon.png", state: "blue" }
         ]},
 
         { group: "🖥️ Backend & Tools", skills: [
             { name: "Express", icon: "express", state: "blue" },
+            { name: "SvelteKit", icon: "svelte", state: "blue" },
             { name: "Node.js", icon: "nodejs", state: "blue" },
             { name: "Flask", icon: "flask", state: "yellow" },
+            { name: "FastAPI", icon: "fastapi", state: "yellow" },
             { name: "Tauri", icon: "tauri", state: "red" },
             { name: "PyWebView", icon: "https://pywebview.flowrl.com/logo-no-text.png", state: "blue" }
         ]}

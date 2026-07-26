@@ -30,6 +30,7 @@
         new Codeberg("dvs/LLM-AutoDocs", "A tool to automatically generate documentation for your LLM models."),
         new Codeberg("dvs/Whispy", "Tired of typing? This is your new best friend."),
         new NotOS("on-party.org", "Party is a static-page hosting website offering a free web hosting service. Still work in progress."),
+        new Github("daveberrys/AppShortsies", "Another way to start your apps without the need to go deep in your folders. "),
     ]
     
     function makeRows(linkList) {
