@@ -129,7 +129,7 @@
         
         .mobileHint {
             display: none;
-            margin-top: 20rem;
+            margin-top: 2rem;
             color: var(--text);
         } @media screen and (max-width: 768px) {
             .mobileHint {
