@@ -6,6 +6,7 @@ const app = express();
 const port = 3000
 
 app.use(cors());
+app.use(express.json());
 app.use((req, res, next) => {
   console.log(`[${req.method}] - ${req.url}`)
   next()
@@ -14,6 +15,7 @@ app.use((req, res, next) => {
 import * as codebergAPI from './api/codebergAPI.js';
 import * as discord from './api/discord.js';
 import * as githubAPI from './api/githubAPI.js';
+import * as commissions from './api/commissions.js';
 import * as lastfm from './api/lastfm.js';
 import * as news from './api/news.js';
 
@@ -43,6 +45,15 @@ app.get('/api/lastfm', (req, res) => {
   lastfm.GET()
     .then(data => res.json(data))
     .catch(err => res.status(500).json({ error: err.message }));
+})
+
+app.post('/api/commissions', async (req, res) => {
+  try {
+    await commissions.POST(req);
+    res.json({ success: true });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 })
 
 // Blogs API
