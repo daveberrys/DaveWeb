@@ -268,12 +268,18 @@
         width: 100%;
         max-width: 40rem;
         margin: 0 auto;
+        box-sizing: border-box;
+
+        @media screen and (min-width: 768px) {
+            width: 100%;
+        }
 
         .field {
             display: flex;
             flex-direction: column;
             gap: 0.4rem;
             width: 100%;
+            box-sizing: border-box;
 
             label {
                 font-weight: bold;
