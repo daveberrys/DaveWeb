@@ -2,7 +2,6 @@
     import Discord from '../misc/About/Discord.svelte';
     import LastFM from '../misc/About/LastFM.svelte';
     import WakatimeStats from '../misc/About/WakatimeStats.svelte';
-    import WhatsNew from '../misc/About/WhatsNew.svelte';
 
     const skillGroup = [
         { group: "💻 Languages", skills: [
@@ -59,10 +58,6 @@
 </script>
 
 <main>
-    <div class="whatsNew">
-        <WhatsNew />
-    </div>
-
     <section class="showoff">
         <span class="bigText">🌐 Status</span>
         <section>
@@ -123,12 +118,6 @@
         display: flex;
         flex-direction: column;
         gap: 30px;
-
-        .whatsNew {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
 
         .showoff {
             display: flex;

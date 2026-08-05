@@ -1,5 +1,7 @@
 ---
 import Sidebar from "./components/Sidebar.svelte"
+import WhatsNew from "./components/misc/WhatsNew.svelte"
+
 import { ClientRouter } from "astro:transitions";
 
 const { path = "/" } = Astro.props;
@@ -28,6 +30,10 @@ const description = "Website contains Daveberry's portfolio and projects. Check 
     <meta content="#008BFF" data-react-helmet="true" name="theme-color" />
 </head>
     <body>
+        <div class="whatsNew">
+            <WhatsNew />
+        </div>
+
         <div class="parent">
             <Sidebar transition:persist client:load currentPath={path} />
             <section transition:animate="slide" class="mainPanel"><slot/></section>
@@ -97,6 +103,22 @@ html, body {
 } :global(.mediumText) {
     display: flex;
     font-size: 1.25rem;
+}
+
+.whatsNew {
+    z-index: 99;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(-70%);
+    opacity: 0.25;
+    filter: blur(1px);
+    transition: opacity 0.3s, filter 0.3s, transform 0.3s;
+
+    &:hover {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(-50%) translateY(10%);
+    }
 }
 
 </style>

@@ -1,7 +1,9 @@
 <main>
     <span class="bigText header">
         📢 WHAT'S NEW?!
-        <a href="https://github.com/daveberrys/DaveWeb/commits/main/frontend/src/components/misc/About/WhatsNew.svelte">Open File</a>
+        <a href="https://github.com/daveberrys/DaveWeb/commits/main/frontend/src/components/misc/WhatsNew.svelte">
+            Open File History
+        </a>
     </span>
     <span>
         <a href="/commisions">I've opened a commision</a>!
@@ -20,6 +22,8 @@
         padding: 16px;
         display: flex;
         flex-direction: column;
+        font-family: jetbrains;
+        color: white;
 
         .header {
             display: flex;
@@ -48,9 +52,8 @@
 
         a { color: aqua; }
         .date { font-size: 0.8rem; opacity: 0.5; }
-        @media screen and (max-width: 1200px) {
-            width: 100%;
-            padding: 8px;
+        @media screen and (max-width: 900px) {
+            width: 20rem;
         }
     }
 </style>
