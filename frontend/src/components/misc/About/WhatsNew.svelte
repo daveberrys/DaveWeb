@@ -1,5 +1,8 @@
-<main onclick={() => window.open("https://github.com/daveberrys/DaveWeb/blob/main/frontend/src/components/misc/About/WhatsNew.svelte")}>
-    <span class="bigText">📢 WHAT'S NEW?!</span>
+<main>
+    <span class="bigText header">
+        📢 WHAT'S NEW?!
+        <a href="https://github.com/daveberrys/DaveWeb/commits/main/frontend/src/components/misc/About/WhatsNew.svelte">Open File</a>
+    </span>
     <span>
         <a href="/commisions">I've opened a commision</a>!
         You can now commision me something to create a custom app or a production ready app for you!
@@ -17,6 +20,31 @@
         padding: 16px;
         display: flex;
         flex-direction: column;
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            a {
+                all: unset;
+                padding: 5px 12px;
+                border-radius: 8px;
+                background-color: var(--sidebar);
+                border: 2px solid var(--border);
+                color: #fff;
+                font-weight: bold;
+                font-size: 1rem;
+                cursor: pointer;
+                text-align: center;
+                transition: scale 0.1s ease-in-out, border-color 0.1s ease-in-out;
+
+                &:hover {
+                    scale: 1.05;
+                    border-color: var(--primary);
+                }
+            }
+        }
 
         a { color: aqua; }
         .date { font-size: 0.8rem; opacity: 0.5; }
