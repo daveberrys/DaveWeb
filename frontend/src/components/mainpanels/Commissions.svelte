@@ -11,6 +11,7 @@
         { name: "Command Line Interface", description: "Either a simple CLI tool, or a complex one.", type: "cli", price: 5 },
         { name: "Linux Desktop Environment Configs", description: "Create a custom Linux desktop environment configs.", type: "config", price: 7.5 },
         { name: "Backend Server", description: "REST API servers.", type: "server", price: 15 },
+        { name: "Personal Portfolio Website", description: "Your own personal portfolio website.", type: "website", price: 10 },
       ]},
 
       { groupName: "Tech Stack", items: [
@@ -22,6 +23,8 @@
         { name: "Clap + Rust", description: "Clap CLI with Rust.", compat: ["cli"], price: 3 },
         { name: "Cobra + Go", description: "Cobra CLI with Go.", compat: ["cli"], price: 2.5 },
         { name: "Waybar + Mako + Rofi", description: "Waybar, Mako and Rofi configs.", compat: ["config"], price: 1.5 },
+        { name: "Svelte + Vite", description: "Svelte website with Vite.", compat: ["website"], price: 2 },
+        { name: "React + Vite", description: "React website with Vite.", compat: ["website"], price: 2 },
       ]},
 
       { groupName: "AI Usage", items: [

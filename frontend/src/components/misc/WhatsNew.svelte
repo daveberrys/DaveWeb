@@ -1,3 +1,11 @@
+<!-- 
+here's how to use this page and how to commit
+
+  edit only inside the `content` class of div
+  name your commit "what's new - [date]".
+    [date] being the current time. eg; "what's new - 5th August 2026"
+-->
+
 <main>
     <span class="bigText header">
         📢 WHAT'S NEW?!
@@ -5,12 +13,15 @@
             Open File History
         </a>
     </span>
-    <span>
-        <a href="/commisions">I've opened a commision</a>!
-        You can now commision me something to create a custom app or a production ready app for you!
-        Check out the <a href="/commisions">commisions page</a> to learn more.
-    </span>
-    <span class="date">5th August 2026</span>
+
+    <div class="content">
+        <span>
+            <a href="/commissions">I've opened a commissions</a>!
+            You can now commision me something to create a custom app or a production ready app for you!
+            Check out the <a href="/commissions">commissions page</a> to learn more.
+        </span>
+        <span class="date">5th August 2026</span>
+    </div>
 </main>
 
 <style>
@@ -24,6 +35,7 @@
         flex-direction: column;
         font-family: jetbrains;
         color: white;
+        gap: 5px;
 
         .header {
             display: flex;
@@ -48,6 +60,11 @@
                     border-color: var(--primary);
                 }
             }
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
         }
 
         a { color: aqua; }
