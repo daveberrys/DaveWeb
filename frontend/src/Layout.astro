@@ -12,7 +12,7 @@ const description = "Website contains Daveberry's portfolio and projects. Check 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=0.85" />
-    <link rel="icon" href="/assets/images/Daveberry Wave.png" />
+    <link rel="icon" href="/assets/images/Daveberry%20Wave.png" />
     <link
         rel="preload"
         href="/assets/fonts/JetBrainsMono-Regular.ttf"
@@ -21,6 +21,7 @@ const description = "Website contains Daveberry's portfolio and projects. Check 
         crossorigin
     />
     <title>Dave's Webby</title>
+    <meta property="og:site_name" content="Dave's Webby" />
     <meta name="description" content={description} />
     
     <meta content="Dave's Webby" property="og:title" />
@@ -28,6 +29,15 @@ const description = "Website contains Daveberry's portfolio and projects. Check 
     <meta content="https://codedave.pages.dev/" property="og:url" />
     <meta content="https://codedave.pages.dev/assets/images/Daveberry%20Wave.png" property="og:image" />
     <meta content="#008BFF" data-react-helmet="true" name="theme-color" />
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Dave's Webby",
+        "url": "https://codedave.pages.dev/"
+    }
+    </script>
 </head>
     <body>
         <div class="whatsNew">
