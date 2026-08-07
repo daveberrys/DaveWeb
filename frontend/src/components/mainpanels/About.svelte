@@ -127,9 +127,11 @@
                 display: flex;
                 gap: 14px;
                 overflow-x: scroll;
+                scrollbar-width: thin;
+                scrollbar-color: var(--sidebar) var(--background);
             }
         }
-        
+
         .about {
             section {
                 display: flex;
