@@ -28,13 +28,13 @@
         ]},
 
         { group: "🖥️ Backend & Tools", skills: [
-            { name: "Express", icon: "express", state: "blue" },
+            { name: "Express", icon: "express", state: "yellow" },
             { name: "SvelteKit", icon: "svelte", state: "blue" },
-            { name: "Node.js", icon: "nodejs", state: "blue" },
             { name: "Flask", icon: "flask", state: "yellow" },
             { name: "FastAPI", icon: "fastapi", state: "yellow" },
-            { name: "Tauri", icon: "tauri", state: "red" },
-            { name: "PyWebView", icon: "https://pywebview.flowrl.com/logo-no-text.png", state: "blue" }
+            { name: "Tauri", icon: "tauri", state: "blue" },
+            { name: "Wails", icon: "https://v3.wails.io/_astro/wails-logo-dark.BiOp9SEk_SMe1d.svg", state: "red" },
+            { name: "PyWebView", icon: "https://pywebview.flowrl.com/logo-no-text.png", state: "yellow" }
         ]}
     ];
 
