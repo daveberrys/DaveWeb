@@ -17,7 +17,7 @@ here's how to use this page and how to commit
     <div class="content">
         <span>
             <a href="/commissions">I've opened a commissions</a>!
-            You can now commision me something to create a custom app or a production ready app for you!
+            You can now commissions me something to create a custom app or a production ready app for you!
             Check out the <a href="/commissions">commissions page</a> to learn more.
         </span>
         <span class="date">5th August 2026</span>
