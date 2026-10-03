@@ -4,7 +4,11 @@
     class Github { constructor(url, desc) { this.url = url; this.desc = desc; this.plat = "github"; } }
     class Codeberg { constructor(url, desc) { this.url = url; this.desc = desc; this.plat = "codeberg"; } }
     class NotOS { constructor(url, desc) { this.url = url; this.desc = desc; this.plat = "notos"; } }
-    
+
+    const favouriteProjects = [
+        new Github("Team-SolarEngine/solar-lanucher", "A FNF Launcher made with Tauri, Svelte, and BeerCSS. Intergraded with GameBanana."),
+    ]
+
     const githubOrganization = [
         new Github("PinpointTools", "A team dedicated for making open source software and websites."),
         new Github("Creativity-Archived", "A way to easily share your game with less restrctions. No bullshit. Just cool shit."),
@@ -30,7 +34,8 @@
         new Codeberg("dvs/LLM-AutoDocs", "A tool to automatically generate documentation for your LLM models."),
         new Codeberg("dvs/Whispy", "Tired of typing? This is your new best friend."),
         new NotOS("on-party.org", "Party is a static-page hosting website offering a free web hosting service. Still work in progress."),
-        new Github("daveberrys/AppShortsies", "Another way to start your apps without the need to go deep in your folders. "),
+        new Github("daveberrys/AppShortsies", "Another way to start your apps without the need to go deep in your folders."),
+        ... favouriteProjects
     ]
     
     function makeRows(linkList) {
@@ -55,6 +60,7 @@
         return rows;
     }
     
+    const favourite = makeRows(favouriteProjects);
     const organization = makeRows(githubOrganization);
     const projects = makeRows(githubProjects);
 </script>
@@ -65,7 +71,22 @@
         <span>Take a look at the stuff I contributed.</span>
     </section>
 
-    <span class="bigText" style="margin-top: 30px;">Organizations</span>
+    <span class="bigText" style="margin-top: 30px;">✨ Favourite Projects! ✨</span>
+    {#each favourite as row}
+        <section class="contributions">
+            {#each row as link}
+                <div class="content">
+                    <GitCard
+                        url={link.url}
+                        desc={link.desc}
+                        plat={link.plat}
+                    />
+                </div>
+            {/each}
+        </section>
+    {/each}
+
+    <span class="bigText" style="margin-top: 30px;">👥 Organizations 👥</span>
     {#each organization as row}
         <section class="contributions">
             {#each row as link}
@@ -80,7 +101,7 @@
         </section>
     {/each}
 
-    <span class="bigText" style="margin-top: 30px;">Projects</span>
+    <span class="bigText" style="margin-top: 30px;">📁 Projects 📁</span>
     {#each projects as row}
         <section class="contributions">
             {#each row as link}

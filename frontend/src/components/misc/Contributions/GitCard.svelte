@@ -48,11 +48,9 @@
         if (gitData.type === "organization") {
             if (gitData.followers != null) stats.push(`${gitData.followers} followers`);
             if (gitData.repos != null) stats.push(`${gitData.repos} repos`);
-            if (gitData.members != null) stats.push(`${gitData.members} members`);
         } else {
             if (gitData.stars != null) stats.push(`${gitData.stars} stars`);
             if (gitData.forks != null) stats.push(`${gitData.forks} forks`);
-            if (gitData.contributors != null) stats.push(`${gitData.contributors} contributors`);
         }
         return stats;
     }
