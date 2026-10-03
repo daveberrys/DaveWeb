@@ -152,6 +152,7 @@
 
         <div class="total">
             <span class="bigText">Total: ${getTotal()}</span>
+            <span style="margin-bottom: 12px;">Final pricing may vary depending on the app's complexity.</span>
             <span>You can send me a Steam Gift Card, Discord Nitro, or anything you can think of.</span>
             <span>I'm not allowing using my Bank account.</span>
         </div>
@@ -176,6 +177,7 @@
                     bind:value={extraInfo}
                 ></textarea>
             </div>
+
             <button class="submit-btn" type="submit" disabled={submitting || !contact.trim()}>
                 {submitting ? "Submitting..." : "Submit Commission"}
             </button>

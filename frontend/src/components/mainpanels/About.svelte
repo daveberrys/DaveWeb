@@ -55,6 +55,11 @@
                 return "#008BFF";
         }
     }
+
+    function copyText(text) {
+        navigator.clipboard.writeText(text);
+        alert("Copied; " + text)
+    }
 </script>
 
 <main>
@@ -70,8 +75,11 @@
         <span class="bigText">👤 About Me</span> <br/>
         <section>
             <span>
-                I am a self-taught teenager open source software developer. I make websites, software, and tools! <br/>
-                I'm also an artist! I create designs, make furry cartoony arts and practicing! <br/>
+                Howdy! I'm Daveberry. I'm a <b>self-taught teenager making software</b>, website, CLI tools, and more. <br/>
+                Additional hobbies include; <b>drawing</b>, <b>composing</b>, <b>working out</b>, and <b>playing video games</b>. <br/>
+                If you wish to contact me, please do so by 
+                    <span class="link" onclick={() => copyText("daveberryblueson@gmail.com")}>Email</span> or
+                    <span class="link" onclick={() => copyText("daveberrys")}>Discord</span>.
             </span>
             
             <span class="skills">
@@ -188,5 +196,10 @@
                 /*overflow-x: scroll;*/
             }
         }
+    }
+
+    .link {
+        cursor: pointer;
+        color: aqua;
     }
 </style>
