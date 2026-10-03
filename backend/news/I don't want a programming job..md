@@ -15,3 +15,11 @@ Ever since I've learnt the more I love the hobby I do, the more I realize... I d
 
 ## So, what about programming?
 Side hobby. Or I could do a freelance programming job. Either way, I'll be doing something I love, but not for my job.
+
+# --- CONTIUATION - 3rd October 2026 ---
+
+I just feel like a programming job where I'd sit in a office and work my ass off just doesn't feel fun. I love a high-stakes job like Polce Officer or Firefighter would be suited well for me. I've been researching about both jobs and I'd love to be in either of them.
+
+Programming will always be my side hobby. The hobby where once or twice a day, I'll pick it up and code something I want. Not slave on it 24/7 and a slouched back.
+
+That's about it. Bye.
