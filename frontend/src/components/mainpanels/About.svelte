@@ -33,7 +33,7 @@
             { name: "Flask", icon: "flask", state: "yellow" },
             { name: "FastAPI", icon: "fastapi", state: "yellow" },
             { name: "Tauri", icon: "tauri", state: "blue" },
-            { name: "Wails", icon: "https://v3.wails.io/_astro/wails-logo-dark.BiOp9SEk_SMe1d.svg", state: "red" },
+            { name: "Wails", icon: "https://v3.wails.io/assets/wails-logo-dark.svg", state: "red" },
             { name: "PyWebView", icon: "https://pywebview.flowrl.com/logo-no-text.png", state: "yellow" }
         ]}
     ];
