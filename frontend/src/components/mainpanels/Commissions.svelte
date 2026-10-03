@@ -15,24 +15,19 @@
       ]},
 
       { groupName: "Tech Stack", items: [
-        { name: "Tauri + JavaScript Framework", description: "Tauri Webapp with your preferred JavaScript framework.", compat: ["gui"], price: 8 },
-        { name: "Electron + JavaScript Framework", description: "Electron app with your preferred JavaScript framework.", compat: ["gui"], price: 6 },
-        { name: "FastAPI + Python", description: "FastAPI server with Python.", compat: ["server"], price: 2.5 },
-        { name: "Flask + Python", description: "Flask server with Python.", compat: ["server"], price: 2.5 },
-        { name: "Express + NodeJS", description: "Express server with NodeJS.", compat: ["server", "cli"], price: 3 },
-        { name: "Clap + Rust", description: "Clap CLI with Rust.", compat: ["cli"], price: 3 },
-        { name: "Cobra + Go", description: "Cobra CLI with Go.", compat: ["cli"], price: 2.5 },
-        { name: "Waybar + Mako + Rofi", description: "Waybar, Mako and Rofi configs.", compat: ["config"], price: 1.5 },
-        { name: "Svelte + Vite", description: "Svelte website with Vite.", compat: ["website"], price: 2 },
-        { name: "React + Vite", description: "React website with Vite.", compat: ["website"], price: 2 },
-      ]},
-
-      { groupName: "AI Usage", items: [
-        { name: "Agentic Coding", description: "The whole entire code will be written with AI with serious testing, and prompting.", price: -2 },
-        { name: "Yes", description: "I am allowed to use AI to help with coding. This applies to writing with it.", price: 0 },
-        { name: "No", description: "You are disabling me from using AI on your commission. No AI will be used.", price: 5 },
-        { name: "Half both", description: "I'm half allowed to use AI. I can't use it for writing, but I can use it for helping.", price: 2.5 },
-      ]},
+        { name: "Tauri + JavaScript Framework", description: "Tauri Webapp with your preferred JavaScript framework.", compat: ["gui"], price: 0 },
+        { name: "Electron + JavaScript Framework", description: "Electron app with your preferred JavaScript framework.", compat: ["gui"], price: 2 },
+        { name: "FastAPI + Python", description: "FastAPI server with Python.", compat: ["server"], price: 0 },
+        { name: "Flask + Python", description: "Flask server with Python.", compat: ["server"], price: 0 },
+        { name: "Express + NodeJS", description: "Express server with NodeJS.", compat: ["server"], price: 1 },
+        { name: "Clap + Rust", description: "Clap CLI with Rust.", compat: ["cli"], price: 1 },
+        { name: "Cobra + Go", description: "Cobra CLI with Go.", compat: ["cli"], price: 0 },
+        { name: "Waybar + Mako + Rofi", description: "Waybar, Mako and Rofi configs.", compat: ["config"], price: 0 },
+        { name: "Svelte + Vite", description: "Svelte website with Vite.", compat: ["website"], price: 0 },
+        { name: "React + Vite", description: "React website with Vite.", compat: ["website"], price: 0 },
+        { name: "React + Vue", description: "React website with Vue.", compat: ["website"], price: 0 },
+        { name: "Raw HTML", description: "Raw HTML website.", compat: ["website"], price: 1 },
+      ]}
     ];
 
     function selectItem(groupName, itemIndex) {
