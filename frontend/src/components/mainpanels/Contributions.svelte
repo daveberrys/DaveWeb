@@ -16,26 +16,29 @@
     ]
 
     const githubProjects = [
-        new Github("Noteted/Noteted", "A note taking app made with customtkinter. This project has been dropped due to having issues with the customtkinter library."),
         new Github("Creativity-Archived/Creativity-Archived", "A place to share games, software, and many other creative content that you desire."),
         new Github("PinpointTools/VLC.UTILS", "Share your current playing in VLC to LastFM to scrobble, and show off to your friends using Discord RPC."),
         new Github("PinpointTools/SendYourFiles-RW", "A way to share your files to different providers."),
-        new Github("PinpointTools/WhatsAnApp", "An alternative to the official WhatsApp desktop client with custom features. Supported for cross platform. Currently under heavy break."),
         new Github("daveberrys/LitV", "A `uv` inspired tool made with Rust. A python helper if you will."),
         new Github("daveberrys/HostRN", "A simple and fast way to host your services without docker."),
-        new Github("daveberrys/GitUI", "A minimal alternative to GitHub Desktop. Not a full on replacement. Maybe later..."),
-        new Github("daveberrys/Protux", "A terminal inspired by `cmux` but for cross-desktop."),
         new Github("daveberrys/ThisCordRPC", "A simple Discord RPC client with presets, and many others to come."),
-        new Github("daveberrys/EWgent", "A tool to write a prompt before you send it to your preferred LLM."),
         new Github("daveberrys/Guh", "Too cool to use GitHub Desktop but stupid to not know how to use Git CLI? This is for you."),
         new Codeberg("dvs/dvs-interactive-cli-rs", "A simple interactive CLI made in Rust."),
         new Codeberg("dvs/MakeMeYourDotFiles", "Create and share your dotfiles without needing the other person to download a extra package."),
         new Codeberg("dvs/ShowMyNiriRPC", "Shows your niri workspace, what monitor is focused on, and what window you're currently focused on."),
         new Codeberg("dvs/LLM-AutoDocs", "A tool to automatically generate documentation for your LLM models."),
         new Codeberg("dvs/Whispy", "Tired of typing? This is your new best friend."),
-        new NotOS("on-party.org", "Party is a static-page hosting website offering a free web hosting service. Still work in progress."),
         new Github("daveberrys/AppShortsies", "Another way to start your apps without the need to go deep in your folders."),
-        ... favouriteProjects
+    ]
+
+    const obsoleteProjects = [
+        new Github("Noteted/Noteted", "A note taking app made with customtkinter. This project has been dropped due to having issues with the customtkinter library."),
+        new Github("PinpointTools/WhatsAnApp", "An alternative to the official WhatsApp desktop client with custom features. Supported for cross platform. Currently under heavy break."),
+        new Github("daveberrys/GitUI", "A minimal alternative to GitHub Desktop. Not a full on replacement. Maybe later..."),
+        new Github("daveberrys/Protux", "A terminal inspired by `cmux` but for cross-desktop."),
+        new Github("daveberrys/EWgent", "A tool to write a prompt before you send it to your preferred LLM."),
+        new NotOS("on-party.org", "Party is a static-page hosting website offering a free web hosting service. Still work in progress."),
+        new Github("PinpointTools/SendYourFiles", "A way to share your files to different providers. Desktop version, now archived."),
     ]
     
     function makeRows(linkList) {
@@ -63,6 +66,7 @@
     const favourite = makeRows(favouriteProjects);
     const organization = makeRows(githubOrganization);
     const projects = makeRows(githubProjects);
+    const obsolete = makeRows(obsoleteProjects)
 </script>
 
 <main>
@@ -103,6 +107,21 @@
 
     <span class="bigText" style="margin-top: 30px;">📁 Projects 📁</span>
     {#each projects as row}
+        <section class="contributions">
+            {#each row as link}
+                <div class="content">
+                    <GitCard
+                        url={link.url}
+                        desc={link.desc}
+                        plat={link.plat}
+                    />
+                </div>
+            {/each}
+        </section>
+    {/each}
+
+    <span class="bigText" style="margin-top: 30px;">🪦 Obsolete Projects 🪦</span>
+    {#each obsolete as row}
         <section class="contributions">
             {#each row as link}
                 <div class="content">
