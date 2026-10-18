@@ -91,6 +91,7 @@
 		border: 2px solid var(--border);
 		padding: 5px 10px;
 		border-radius: 10px;
+		min-width: fit-content;
 
     	.albumArt {
     		display: block;
