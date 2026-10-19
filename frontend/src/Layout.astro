@@ -49,6 +49,12 @@ const description = "Website contains Daveberry's portfolio and projects. Check 
             <section transition:animate="slide" class="mainPanel"><slot/></section>
         </div>
     </body>
+
+    <script>
+      if (window.location.hostname.toLowerCase() === "codedave.pages.dev") {
+        window.location.replace(`https://blueson.tech`);
+      }
+    </script>
 </html>
 
 <ClientRouter />
