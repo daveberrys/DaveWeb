@@ -16,9 +16,9 @@ here's how to use this page and how to commit
 
     <div class="content">
         <span>
-            <a href="/commissions">I've opened a commissions</a>!
-            You can now commissions me something to create a custom app or a production ready app for you!
-            Check out the <a href="/commissions">commissions page</a> to learn more.
+            <b>I HAVE A DOMAIN!!!</b> - Thanks to <a href="https://www.youtube.com/channel/UCI165PBPVnyQmTvtlJZ-kAw">Looky</a>,
+            I officially have a domain! If you go to <a href="codedave.pages.dev">codedave.pages.dev</a>, it'll still work but it'll redirect you.
+            Thank you again, <a href="https://www.youtube.com/channel/UCI165PBPVnyQmTvtlJZ-kAw">Looky</a>! And spending almost 10 pounds fo this, lol.
         </span>
         <span class="date">5th August 2026</span>
     </div>
