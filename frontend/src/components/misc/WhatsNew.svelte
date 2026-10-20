@@ -20,7 +20,7 @@ here's how to use this page and how to commit
             I officially have a domain! If you go to <a href="codedave.pages.dev">codedave.pages.dev</a>, it'll still work but it'll redirect you.
             Thank you again, <a href="https://www.youtube.com/channel/UCI165PBPVnyQmTvtlJZ-kAw">Looky</a>! And spending almost 10 pounds fo this, lol.
         </span>
-        <span class="date">5th August 2026</span>
+        <span class="date">18th October 2026</span>
     </div>
 </main>
 
