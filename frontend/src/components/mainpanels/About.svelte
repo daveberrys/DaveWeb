@@ -8,8 +8,6 @@
             { name: "Lua", icon: "lua", state: "yellow" },
             { name: "Haxe", icon: "haxe", state: "yellow" },
             { name: "Python", icon: "python", state: "blue" },
-            { name: "HTML", icon: "html", state: "yellow" },
-            { name: "CSS", icon: "css", state: "yellow" },
             { name: "Rust", icon: "rust", state: "blue" },
             { name: "Go", icon: "go", state: "blue" },
             { name: "JavaScript", icon: "js", state: "yellow" },
