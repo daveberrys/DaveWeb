@@ -14,9 +14,10 @@
     let links = [
         new SidebarLink("Home", "/"),
         new SidebarLink("Contributions", "/contributions"),
+        new SidebarLink("Latest Updates", "/latestupdate"),
         new SidebarLink("Links", "/links"),
         new SidebarLink("News", "/news"),
-        new SidebarLink("Commissions", "/commissions")
+        new SidebarLink("Commissions", "/commissions"),
     ];
 
     function formatPath(path) {
@@ -67,6 +68,8 @@
     <div class="mobileHint">
         <span>ppst: drag to left to fill your screen to the main panel!</span>
     </div>
+
+    <div style="margin-bottom: 80px;"></div>
 </div>
 
 <style>
@@ -75,6 +78,7 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
+        overflow-y: auto;
 
         min-width: 15rem;
         max-width: 15rem;

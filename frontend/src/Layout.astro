@@ -84,7 +84,7 @@ html, body {
     padding: 0;
     overflow: hidden;
     scrollbar-width: thin;
-    scrollbar-color: var(--sidebar) var(--background);
+    scrollbar-color: var(--background) var(--sidebar);
 }
 
 .parent {
@@ -92,7 +92,7 @@ html, body {
     height: 100dvh;
     background: var(--background);
     color: var(--text);
-    font-family: jetbrains;
+    font-family: jetbrains !important;
     box-sizing: border-box;
     overflow-y: hidden;
     
@@ -121,6 +121,9 @@ html, body {
 } :global(.mediumText) {
     display: flex;
     font-size: 1.25rem;
+} :global(.smallText) {
+    display: flex;
+    font-size: 0.8rem;
 }
 
 .whatsNew {
