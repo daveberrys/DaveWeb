@@ -197,7 +197,7 @@
 
             :global(img) {
                 border-radius: 8px;
-                width: 5rem;
+                width: 100%;
             }
 
             :global(blockquote) {
