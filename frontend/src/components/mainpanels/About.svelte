@@ -22,7 +22,10 @@
             { name: "Astro", icon: "astro", state: "blue" },
             { name: "React", icon: "react", state: "yellow" },
             { name: "Vue", icon: "vue", state: "yellow"},
-            { name: "BeerCSS", icon: "https://www.beercss.com/favicon.png", state: "blue" }
+            { name: "BeerCSS", icon: "https://www.beercss.com/favicon.png", state: "blue" },
+            { name: "egui", icon: "https://www.egui.rs/favicon.ico", state: "yellow"},
+            { name: "Dioxus", icon: "https://dioxuslabs.com/assets/multiplatform-light-dxh268acab15bf5e190.svg", state: "blue"},
+            { name: "BUI: Blender's UI", icon: "https://bui.preetham.top/logo.png", state: "blue"},
         ]},
 
         { group: "🖥️ Backend & Tools", skills: [
