@@ -79,7 +79,7 @@
                 Howdy! I'm Daveberry. I'm a <b>self-taught teenager making software</b>, website, CLI tools, and more. <br/>
                 Additional hobbies include; <b>drawing</b>, <b>composing</b>, <b>working out</b>, and <b>playing video games</b>. <br/>
                 If you wish to contact me, please do so by 
-                    <span class="link" onclick={() => copyText("daveberryblueson@gmail.com")}>Email</span> or
+                    <span class="link" onclick={() => copyText("daveberry@blueson.tech")}>Email</span> or
                     <span class="link" onclick={() => copyText("daveberrys")}>Discord</span>. <br/>
                 If you want to check on what I've contributed, check the <a class="link" href="/contributions">contributions</a> page.
             </span>
